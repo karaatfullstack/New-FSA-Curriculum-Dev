@@ -7,8 +7,7 @@ const users = [
     { name: "Albert", age: 76, occupation: "programmer" },
     { name: "Adam", age: 47, occupation: "teacher" },
     { name: "Robert", age: 72, occupation: "driver" },
-]
-
+];
 
 function main() {
     //grab the div with the id of "root"
