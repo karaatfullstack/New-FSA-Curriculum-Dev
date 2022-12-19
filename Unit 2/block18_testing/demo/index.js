@@ -1,14 +1,8 @@
-//stack trace example
-function first() {
-    second();
-}
+let x = 5;
 
-function second() {
-    console.trace("This is a trace from");
+/* Checking if the variable x is a number. */
+if (typeof x === "number") {
+  console.log("x is a number");
+} else {
+  console.log("x is not a number");
 }
-
-function main() {
-    first();
-}
-
-main();
