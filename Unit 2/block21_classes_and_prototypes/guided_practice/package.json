@@ -1,0 +1,12 @@
+{
+  "name": "guided_practice",
+  "version": "1.0.0",
+  "description": "1. This code defines three classes: Home, SingleFamilyHome, and Apartment. The Home class is the base class and has three properties: rooms, bathrooms, and squareFeet. It also has a method, getInfo, which returns a string containing information about the home.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
