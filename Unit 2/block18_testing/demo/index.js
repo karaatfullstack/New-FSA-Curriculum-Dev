@@ -1,29 +1,14 @@
-function sum(a, b) {
-    return a + b;
+//stack trace example
+function first() {
+    second();
 }
 
-function multiply(a, b) {
-    return a * b;
+function second() {
+    console.trace("This is a trace from");
 }
 
-function stringOrNot(a) {
-    if (typeof a === 'string') {
-        return true;
-    } else {
-        return false;
-    }
+function main() {
+    first();
 }
 
-function fizzBuzz(a) {
-    if (a % 3 === 0 && a % 5 === 0) {
-        return 'fizzbuzz';
-    } else if (a % 3 === 0) {
-        return 'fizz';
-    } else if (a % 5 === 0) {
-        return 'buzz';
-    } else {
-        return a;
-    }
-}
-
-module.exports = {sum, multiply, stringOrNot, fizzBuzz};
+main();
