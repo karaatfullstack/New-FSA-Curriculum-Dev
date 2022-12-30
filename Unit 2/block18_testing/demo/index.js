@@ -1,8 +1,9 @@
-let x = 5;
+const assert = require('assert');
 
-/* Checking if the variable x is a number. */
-if (typeof x === "number") {
-  console.log("x is a number");
-} else {
-  console.log("x is not a number");
+function add(a, b) {
+  return a + b;
 }
+
+const result = add(1, 2);
+
+assert.equal(result, 3);
