@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connect 4!</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <section id="enterNames">
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <h1>4 In A Row!</h1>
+        <button id="quickStart">Quick start for debugging</button>
+      </div>
+      <div class="playerInfoCard">
+        <div class="labelAndIcon">
+          <label>Enter Player 1 Name:</label>
+          <i class="material-icons inputIcon">lock_open</i>
+        </div>
+
+        <div contenteditable class="textInput" id="inputPlayer1"></div>
+
+        <div class="playAsComputerContainer">
+          <input
+            id="checkboxPlayer1"
+            type="checkbox"
+            name="Play As Computer"
+            value="Play As Computer"
+          />
+          <label>Play As Computer</label>
+        </div>
+        <div class="playBtnContainer">
+          <button id="btnPlayer1">Play</button>
+        </div>
+      </div>
+      <div class="playerInfoCard">
+        <div class="labelAndIcon">
+          <label>Enter Player 2 Name:</label>
+          <i class="material-icons inputIcon">lock_open</i>
+        </div>
+
+        <div contenteditable class="textInput" id="inputPlayer2"></div>
+
+        <div class="playAsComputerContainer">
+          <input
+            id="checkboxPlayer2"
+            type="checkbox"
+            name="Play As Computer"
+            value="Play As Computer"
+          />
+          <label class="playAsComputerLabel">Play As Computer</label>
+        </div>
+        <div class="playBtnContainer">
+          <button id="btnPlayer2">Play</button>
+        </div>
+      </div>
+      <button id="startGameBtn">Start Game!</button>
+    </section>
+    <section id="board">
+      <div class="column" id="column-0"></div>
+      <div class="column" id="column-1"></div>
+      <div class="column" id="column-2"></div>
+      <div class="column" id="column-3"></div>
+      <div class="column" id="column-4"></div>
+      <div class="column" id="column-5"></div>
+      <div class="column" id="column-6"></div>
+    </section>
+    <section id="whoseTurn">
+      <span>Next move goes to:</span>
+      <span id="nextMove" class="red"></span>
+    </section>
+    <button id="playAgainBtn">Play Again!</button>
+  </body>
+</html>

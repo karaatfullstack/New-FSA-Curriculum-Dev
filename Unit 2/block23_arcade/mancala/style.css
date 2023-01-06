@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+2');
+
+* {
+
+  font-family: 'Baloo 2', cursive;
+  color: #1ad8e5;
+}
+
+#board {
+  display: grid;
+  grid-gap: .2rem;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  width: 70vh;
+  height: 40vh;
+}
+
+.pit {
+  width: 10vh;
+  /* height: 10vh; */
+  /* text-align: center; */
+  font-size: 12vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #a5f0f5;
+  border-radius: .5rem;
+}
+.pit:nth-child(14), .pit:nth-child(1) {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.pit:nth-child(14) {
+  grid-column-start: 8;
+  grid-column-end: 9;
+}
+.pit:nth-child(1) {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.pip {
+  background-color: #f39b95;
+  width: 3vh;
+  height: 3vh;
+  border-radius: 50%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+body > * {
+  margin-bottom: 2rem;
+}
+
+.player {
+  font-weight: bold;
+  color: #e5271a;
+  border-radius: 0.2rem;
+}
+
+#player-turn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.restart {
+  border-radius: .2rem;
+  margin-left: 2rem;
+}
+
+/* 
+dark cyan #1ad8e5
+light cyan #a5f0f5
+dark salmon #e5271a
+light salmon #f39b95
+*/
