@@ -6,11 +6,12 @@ app.use(cors())
 
 //customer should have id, name, email, phone
 const customers = [
-    { id: 1, name: 'John Doe', email: 'johnny@email.com', phone: '555-555-5555' },
-    { id: 2, name: 'Jane Doe', email: 'janesdoe@gmail.com', phone: '555-555-5555' },
-    { id: 3, name: 'John Smith', email: 'jsmith@yahoo.com', phone: '555-555-5555' },
-    { id: 4, name: 'Jane Smith', email: 'jane654654@aol.com', phone: '555-555-5555' },
-    { id: 5, name: 'Shane Taylor', email: 'shanealright@email.com', phone: '555-555-5555' },
+    { id: 1, name: 'John Doe', email: 'johnny@email.com', phone: '555-281-0123' },
+    { id: 2, name: 'Jane Doe', email: 'janesdoe@gmail.com', phone: '555-386-4567' },
+    { id: 3, name: 'John Smith', email: 'jsmith@yahoo.com', phone: '555-654-8901' },
+    { id: 4, name: 'Jane Smith', email: 'jane654654@aol.com', phone: '555-951-2345' },
+    { id: 5, name: 'Shane Taylor', email: 'shanealright@email.com', phone: '555-762-6789' },
+    { id: 6, name: 'Shelly Taylor', email: 'shellsandbells@fullstackacademy.com', phone: '555-098-7654' },
 ];
 
 /* This is a route handler. It is a function that is called when the application receives a request to
@@ -89,7 +90,7 @@ the specified route (in this case, the root route) and HTTP method (in this case
 app.put('/api/customers/:id', (req, res) => {
     try {
         const customer = customers.find(c => c.id === parseInt(req.params.id));
-        
+
         if (!customer) {
             res.status(404).send('The customer with the given ID was not found.');
             return;
