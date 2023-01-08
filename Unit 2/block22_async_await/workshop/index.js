@@ -94,7 +94,7 @@ function addCustomer(customer) {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(customer),
+    body: JSON.stringify(customer)
   })
     .then((response) => response.json())
     .then((customer) => {
