@@ -60,16 +60,6 @@ function updateCustomer(customer) {
 }
 
 /**
- * Find the table row that contains the button that was clicked, then remove that row from the table.
- * @param id - The id of the customer to be deleted.
- */
-function deleteCustomer(id) {
-  const tr = table.querySelector(`[data-id="${id}"]`).parentElement
-    .parentElement;
-  customerList.removeChild(tr);
-}
-
-/**
  * It fetches the customers from the API, then it converts the response to JSON, then it loops through
  * the customers and calls the createCustomer function for each one.
  * @returns a promise.
@@ -100,39 +90,6 @@ function addCustomer(customer) {
     .then((customer) => {
       createCustomer(customer);
     });
-}
-
-/**
- * It takes a customer object, sends a PUT request to the server, and then updates the customer in the
- * DOM.
- * @param customer - {
- * @returns The customer object is being returned.
- */
-function editCustomer(customer) {
-  return fetch(`http://localhost:8080/api/customers/${customer.id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(customer),
-  })
-    .then((response) => response.json())
-    .then((customer) => {
-      updateCustomer(customer);
-    });
-}
-
-/**
- * It takes an id, makes a DELETE request to the server, and then deletes the customer from the DOM.
- * @param id - The id of the customer to delete.
- * @returns The return value of the fetch call.
- */
-function removeCustomer(id) {
-  return fetch(`http://localhost:8080/api/customers/${id}`, {
-    method: "DELETE",
-  }).then(() => {
-    deleteCustomer(id);
-  });
 }
 
 /* This is the code that is executed when the form is submitted. It prevents the default behavior of
@@ -231,3 +188,38 @@ table.addEventListener("click", (event) => {
     removeCustomer(id);
   }
 });
+
+/**
+ * It takes a customer object, sends a PUT request to the server, and then updates the customer in the
+ * DOM.
+ * @param customer - {
+ * @returns The customer object is being returned.
+ */
+function editCustomer(customer) {
+  return fetch(`http://localhost:8080/api/customers/${customer.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(customer),
+  })
+    .then((response) => response.json())
+    .then((customer) => {
+      updateCustomer(customer);
+    });
+}
+
+/**
+ * It takes an id, makes a DELETE request to the server, and then deletes the customer from the DOM.
+ * @param id - The id of the customer to delete.
+ * @returns The return value of the fetch call.
+ */
+function removeCustomer(id) {
+  return fetch(`http://localhost:8080/api/customers/${id}`, {
+    method: "DELETE",
+  }).then(() => {
+    const tr = table.querySelector(`[data-id="${id}"]`).parentElement
+      .parentElement;
+    customerList.removeChild(tr);
+  });
+}
