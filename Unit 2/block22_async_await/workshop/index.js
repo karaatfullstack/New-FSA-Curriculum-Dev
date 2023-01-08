@@ -209,8 +209,9 @@ function editCustomer(customer) {
     });
 }
 
+
 /**
- * It takes an id, makes a DELETE request to the server, and then deletes the customer from the DOM.
+ * It takes an id, makes a DELETE request to the server, and then removes the customer from the DOM.
  * @param id - The id of the customer to delete.
  * @returns The return value of the fetch call.
  */
