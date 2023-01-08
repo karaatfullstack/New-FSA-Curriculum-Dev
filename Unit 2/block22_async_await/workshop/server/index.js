@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors')
-const Joi = require('joi');
 const app = express();
 app.use(express.json());
 app.use(cors())
@@ -14,7 +13,7 @@ const customers = [
     { id: 5, name: 'Shane Taylor', email: 'shanealright@email.com', phone: '555-555-5555' },
 ];
 
-app.get('/', (req, res) => {
+app.get('/', (res) => {
     res.send('API WORKING!');
 });
 
@@ -23,61 +22,81 @@ app.get('/api/customers', (req, res) => {
 });
 
 app.get('/api/customers/:id', (req, res) => {
-    const customer = customers.find(c => c.id === parseInt(req.params.id));
-    if (!customer) res.status(404).send('The customer with the given ID was not found.');
-    res.send(customer);
+    try {
+        const customer = customers.find(c => c.id === parseInt(req.params.id));
+        if (!customer) {
+            res.status(404).send('The customer with the given ID was not found.');
+            return;
+        }
+        res.send(customer);
+    } catch (err) {
+        console.error(err);
+    }
 });
 
 app.post('/api/customers', (req, res) => {
-    const { error } = validateCustomer(req.body);
-    if (error) {
-        res.status(400).send(error.details[0].message);
-        return;
+    try {
+        //check for missing values
+        if (!req.body.name || !req.body.email || !req.body.phone) {
+            res.status(400)
+        }
+
+        //check if customer exists
+        const customerExists = customers.find(c => c.name === req.body.name);
+        if (customerExists) {
+            //if customer exists, send error message
+            res.status(400).send('Customer already exists.');
+            return;
+        }
+
+        const customer = {
+            id: customers.length + 1,
+            name: req.body.name,
+            email: req.body.email,
+            phone: req.body.phone
+        };
+
+        customers.push(customer);
+        res.send(customer);
+    } catch (err) {
+        console.error(err);
     }
-    const customer = {
-        id: customers.length + 1,
-        name: req.body.name
-    };
-    customers.push(customer);
-    res.send(customer);
 });
 
 app.put('/api/customers/:id', (req, res) => {
-    const { error } = validateCustomer(req.body);
-    if (error) {
-        res.status(400).send(error.details[0].message);
-        return;
-    }
+    try {
+        const customer = customers.find(c => c.id === parseInt(req.params.id));
+        if (!customer) {
+            res.status(404).send('The customer with the given ID was not found.');
+            return;
+        }
 
-    //update customer
-    const customer = customers.find(c => c.id === parseInt(req.params.id));
-    if (!customer) {
-        res.status(404).send('The customer with the given ID was not found.');
-        return;
+        //update customer
+        customer.name = req.body.name;
+        customer.email = req.body.email;
+        customer.phone = req.body.phone;
+
+        res.send(customer);
+    } catch (error) {
+        console.error(err);
     }
-    customer.name = req.body.name;
-    res.send(customer);
 });
 
 //delete customers
 app.delete('/api/customers/:id', (req, res) => {
-    const customer = customers.find(c => c.id === parseInt(req.params.id));
-    if (!customer) {
-        res.status(404).send('The customer with the given ID was not found.');
-        return;
+    try {
+        const customer = customers.find(c => c.id === parseInt(req.params.id));
+        if (!customer) {
+            res.status(404).send('The customer with the given ID was not found.');
+            return;
+        }
+        const index = customers.indexOf(customer);
+        customers.splice(index, 1);
+        res.send(customer);
+    } catch (error) {
+        console.error(err);
     }
-    const index = customers.indexOf(customer);
-    customers.splice(index, 1);
-    res.send(customer);
 });
-
-//validate customer
-function validateCustomer(customer) {
-    const schema = Joi.object({
-        name: Joi.string().min(3).required()
-    });
-    return schema.validate(customer);
-}
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
