@@ -40,7 +40,7 @@ ElectricCar.prototype.getDescription = function() {
 };
 
 /* Creating a new Car object with the make Ford, model F-150, and year 2021. */
-const myTruck = new Car("Ford", "F-150", 2019);
+export const myTruck = new Car("Ford", "F-150", 2021);
 
 console.log(myTruck.getDescription());
 
