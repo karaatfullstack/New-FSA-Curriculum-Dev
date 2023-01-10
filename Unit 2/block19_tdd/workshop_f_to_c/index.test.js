@@ -1,5 +1,9 @@
 const fahrenheitToCelsius = require('./index');
 
+test('is fahrenheitToCelcius a function', () => {
+    expect(typeof fahrenheitToCelsius).toEqual('function');
+});
+
 test('converts 32 degrees Fahrenheit to 0 degrees Celsius', () => {
     expect(fahrenheitToCelsius(32)).toBe(0);
 });

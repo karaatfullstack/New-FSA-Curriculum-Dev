@@ -1,37 +1,104 @@
-// import the tasks array from the taskList.js file
-import tasks from './assets/taskList.js';
+// import HTML elements from the DOM
+const todoList = document.getElementById('todo-list');
+const todoForm = document.getElementById('todo-form');
+const todoInput = document.getElementById('todo-input');
 
-// index.js
-const taskList = document.getElementById('task-list');
-const taskForm = document.getElementById('task-form');
-const taskInput = document.getElementById('task-input');
+const API_URL = 'https://jsonplaceholder.typicode.com/todos';
 
-// create a new task element
-const createTaskElement = (task) => {
-    const li = document.createElement('li');
-    li.innerHTML = task;
-    return li;
-};
+async function getTodos() {
+    try {
+        const response = await fetch(API_URL);
+        const todos = await response.json();
+        console.log(todos);
+        renderTodos(todos);
+        return todos;
+    } catch (err) {
+        console.error(err);
+    }
+}
 
-// add a task to the task list
-const addTask = (task) => {
-    const li = createTaskElement(task);
-    taskList.appendChild(li);
-};
+// render a list of todos to <ul> with an id of todo-list
+function renderTodos(todos) {
+    todoList.innerHTML = '';
+    todos.forEach(todo => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <input type="checkbox" ${todo.completed ? 'checked' : ''}>
+            <span><a href="${API_URL}/${todo.id}">${todo.title}</a></span>
+            <button class="delete">Delete</button>
+        `;
+        todoList.appendChild(li);
+    });
+}
 
-// add a task to the task list when the form is submitted
-taskForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    addTask(taskInput.value);
-    taskInput.value = '';
+async function getTodo(id) {
+    try {
+        const response = await fetch(`${API_URL}/${id}`);
+        const todo = await response.json();
+        return todo;
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+// if button class "delete" then delete todo with that id
+todoList.addEventListener('click', async (e) => {
+    if (e.target.classList.contains('delete')) {
+        const id = e.target.parentElement.querySelector('a').href.split('/').pop();
+        console.log(id);
+        await deleteTodo(id);
+        getTodos();
+    }
 });
 
-// add all of the tasks to the task list
-const addAllTasks = (tasks) => {
-    tasks.forEach((task) => {
-        addTask(task);
-    });
-};
+async function createTodo(data) {
+    try {
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const todo = await response.json();
+        confirm('Todo created!');
+        console.log(todo);
+        return todo;
+    } catch (err) {
+        console.error(err);
+    }
+}
 
-// call the addAllTasks function
-addAllTasks(tasks);
+async function updateTodo(id, data) {
+    try {
+        const response = await fetch(`${API_URL}/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const todo = await response.json();
+        return todo;
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+async function deleteTodo(id) {
+    try {
+        const response = await fetch(`${API_URL}/${id}`, {
+            method: 'DELETE'
+        });
+        return response.ok;
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+getTodos();
+
+// getTodo(1).then(todo => console.log(todo));
+// createTodo({ title: 'Buy milk', completed: false }).then(todo => console.log(todo));
+// updateTodo(1, { title: 'Buy eggs', completed: true }).then(todo => console.log(todo));
+// deleteTodo(1).then(success => console.log(success));
