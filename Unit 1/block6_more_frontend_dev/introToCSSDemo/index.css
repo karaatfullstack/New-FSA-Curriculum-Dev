@@ -1,0 +1,40 @@
+/* img{
+  width: 200px;
+  height: 200px;
+} */
+
+html {
+  background-color: #A5E6BA;
+}
+
+article{
+  margin-left: 25% ;
+}
+
+header {
+  color: #360568;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+h2{
+  color: #5B2A86;
+}
+
+.intro-paragraph{
+width: 50vw;
+}
+
+li{
+  color: #360568;
+}
+
+#firstPuppy{
+  border: solid black 1px;
+}
+
+.puppies{
+  width: 300px;
+  height: 300px;
+}
