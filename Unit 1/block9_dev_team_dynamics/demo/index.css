@@ -1,0 +1,30 @@
+html {
+  background-color: #A5E6BA;
+}
+
+article{
+  margin-left: 25% ;
+}
+
+header {
+  color: #360568;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+h2{
+  color: #5B2A86;
+}
+
+p{
+width: 50vw;
+color: #360568; 
+}
+
+
+
+img{
+  width: 300px;
+  height: 300px;
+}
