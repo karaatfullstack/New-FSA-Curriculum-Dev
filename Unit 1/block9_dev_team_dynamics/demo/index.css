@@ -17,19 +17,14 @@ h2{
   color: #5B2A86;
 }
 
-.intro-paragraph{
+p{
 width: 50vw;
+color: #360568; 
 }
 
-li{
-  color: #360568;
-}
 
-#firstPuppy{
-  border: solid black 1px;
-}
 
-.puppies{
+img{
   width: 300px;
   height: 300px;
 }
