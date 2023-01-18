@@ -20,7 +20,7 @@ console.log(
   "i am the variable iAmAnOlderVariable, and I am a string"
 );
 
-// talk about var, and why it is not longer as popular.  Mention that the students may come across this when they are looking at documentation or StackOverflow
+// talk about var, and why it is no longer as popular.  Mention that the students may come across this when they are looking at documentation or StackOverflow
 
 // arithmetic:
 
