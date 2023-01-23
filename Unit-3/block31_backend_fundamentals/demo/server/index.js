@@ -26,14 +26,80 @@ const books = [
 ];
 
 const server = http.createServer((req, res) => {
+    //parse url
     const parsedUrl = url.parse(req.url, true);
 
-    if (parsedUrl.pathname === '/books') {
+    // resolve GET /books
+    if (parsedUrl.pathname === '/books' && req.method === 'GET') {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify(books));
-    } else {
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
-        res.end('Not found');
+    }
+
+    // resolve GET /books/:id
+    if (parsedUrl.pathname.match(/^\/books\/([0-9]+)$/)) {
+        const id = parsedUrl.pathname.split('/')[2];
+        const book = books.find(b => b.id === parseInt(id));
+        //don't rewrite the whole array nor remove the book
+        if (!book) {
+            res.writeHead(404, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ message: 'Book not found' }));
+        } else {
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify(book));
+        }
+    }
+
+    // resolve POST /books
+    if (parsedUrl.pathname === '/books' && req.method === 'POST') {
+        let body = '';
+        req.on('data', chunk => {
+            body += chunk.toString();
+        });
+        req.on('end', () => {
+            const { title, author, price, quantity } = JSON.parse(body);
+            const book = {
+                id: books.length + 1,
+                title,
+                author,
+                price,
+                quantity,
+            };
+            books.push(book);
+            res.writeHead(201, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify(book));
+        });
+    }
+
+    // resolve PUT /books/:id
+    if (parsedUrl.pathname.match(/^\/books\/([0-9]+)$/)) {
+        const id = parsedUrl.pathname.split('/')[2];
+        let body = '';
+        req.on('data', chunk => {
+            body += chunk.toString();
+        });
+        req.on('end', () => {
+            const { title, author, price, quantity } = JSON.parse(body);
+            const book = {
+                id: parseInt(id),
+                title,
+                author,
+                price,
+                quantity,
+            };
+            const index = books.findIndex(b => b.id === parseInt(id));
+            books[index] = book;
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify(book));
+        });
+    }
+
+    // resolve DELETE /books/:id
+    if (parsedUrl.pathname.match(/^\/books\/([0-9]+)$/)) {
+        const id = parsedUrl.pathname.split('/')[2];
+        const index = books.findIndex(b => b.id === parseInt(id));
+        books.splice(index, 1);
+        res.writeHead(204, { 'Content-Type': 'application/json' });
+        res.end();
     }
 });
 
