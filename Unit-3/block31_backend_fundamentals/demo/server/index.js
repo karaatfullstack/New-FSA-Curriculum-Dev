@@ -31,6 +31,8 @@ const server = http.createServer((req, res) => {
 
     // resolve GET /books
     if (parsedUrl.pathname === '/books' && req.method === 'GET') {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify(books));
     }
