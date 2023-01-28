@@ -32,6 +32,12 @@ test('should return a single pet from the database', () => {
         expect(response.body).toEqual(expect.objectContaining({ id: 1 }));
         //expect response to have a pet object
         expect(response.body).toEqual(expect.objectContaining({ name: 'Fido' }));
+        // expect response to have a pet object with an owner of 'John'
+        expect(response.body).toEqual(expect.objectContaining({ owner: 'John' }));
+        // expect the number of appointments to be 1
+        expect(response.body.appointments.length).toBe(1);
+        // expect the all appointments to be an object
+        expect(response.body.appointments[0]).toEqual(expect.objectContaining({ date: '01/01/2020' }));
     });
 });
 
