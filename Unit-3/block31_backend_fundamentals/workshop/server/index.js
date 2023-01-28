@@ -41,8 +41,8 @@ app.get('/api/v1/pets/:id', (req, res) => {
     res.send(pet);
 });
 
-// app.listen(PORT, () => {
-//     console.log('Server is listening on port ' + PORT);
-// });
+app.listen(PORT, () => {
+    console.log('Server is listening on port ' + PORT);
+});
 
 module.exports = app;
