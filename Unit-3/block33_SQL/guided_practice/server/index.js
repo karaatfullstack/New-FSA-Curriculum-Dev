@@ -73,12 +73,26 @@ app.delete("/users/:id", async (req, res) => {
     const { id } = req.params;
     try {
         const { rows } = await pool.query("DELETE FROM users WHERE id = $1 RETURNING *", [id]);
+        // return remaining users
         res.status(200).json(rows);
     } catch (error) {
         console.error(error.message);
     }
 });
 
-app.listen(PORT, () => console.log(`Server started at port ${PORT}`));
+// app.listen as an async function
+const start = async () => {
+    try {
+        await pool.connect();
+        console.log("Connected to PostgreSQL database");
+        app.listen(PORT, () => {
+            console.log(`Server is listening on port ${PORT}`);
+        });
+    } catch (error) {
+        console.error(error.message);
+    }
+};
+
+// start();
 
 module.exports = app;
