@@ -5,7 +5,7 @@ const pets = require('./data');
 const express = require('express');
 const app = express();
 
-const PORT = 8080 || 8000;
+const PORT = 8080;
 
 // fs module
 const fs = require('fs');
