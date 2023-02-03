@@ -1,4 +1,4 @@
-# Introduction to PostgreSQL
+# CRUD with PostgreSQL Database
 
 ## What is PostgreSQL?
 
