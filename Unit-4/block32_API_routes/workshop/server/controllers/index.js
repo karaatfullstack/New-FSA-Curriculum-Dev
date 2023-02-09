@@ -5,17 +5,6 @@ getArticles = () => {
     return articles;
 };
 
-createArticle = (title, user) => {
-    const id = articles.length + 1;
-    const article = {
-        id,
-        title,
-        userId: user.id,
-    };
-    articles.push(article);
-    return article;
-};
-
 login = (username, password) => {
     const user = users.find((user) => user.username === username);
 
@@ -30,6 +19,20 @@ login = (username, password) => {
         token,
     };
 };
+
+createArticle = (title, username) => {
+    const id = articles.length + 1;
+    const newArticle = {
+        id,
+        title,
+        username
+    };
+
+    articles.push(newArticle);
+
+    return newArticle;
+};
+
 
 getUser = (id) => {
     return users.find((user) => user.id === id);

@@ -72,3 +72,30 @@ describe('POST /login', () => {
             .expect(422);
     });
 });
+
+// test the POST /articles route
+describe('POST /articles', () => {
+    it('should not allow POST without token', () => {
+        return request(app)
+            .post('/articles')
+            .send({ title: 'test' })
+            .expect(401);
+    });
+
+    it('should allow POST with token', () => {
+        return request(app)
+            .post('/login')
+            .send({ username: 'janedoe', password: '123' })
+            .then((response) => {
+                // extract token from response
+                const token = response.body.token;
+
+                return request(app)
+                    .post('/articles')
+                    // set headers with x-access-token key and token value
+                    .set('x-access-token', token)
+                    .send({ username: 'janedoe', title: 'test' })
+                    .expect(200);
+            });
+    });
+});
