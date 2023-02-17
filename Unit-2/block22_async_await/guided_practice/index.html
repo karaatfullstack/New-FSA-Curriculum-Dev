@@ -2,15 +2,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="./style.css" />
     <title>JSONPlaceholder API App</title>
   </head>
   <body>
-    <h1>Todos</h1>
-    <form id="todo-form">
-      <input type="text" id="todo" placeholder="Add a todo" />
-      <button type="submit">Add</button>
-    </form>
-    <ul id="todo-list"></ul>
-    <script type="module" src="index.js"></script>
+    <div class="App">
+      <h1>REST Countries API</h1>
+      <div id="countries-container">
+        <ul id="countries"></ul>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
   </body>
 </html>
