@@ -9,3 +9,9 @@ article {
   margin: 1rem;
   padding: 2rem;
 }
+
+.Checkbox1 .Checkbox_color {
+
+color: rgb(10, 71, 129) !important;
+
+}
