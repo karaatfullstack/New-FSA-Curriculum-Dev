@@ -25,7 +25,7 @@ class Pet {
         this.age = age;
     }
 
-    eat() {
+    birthday() {
         return `${this.name} is ${this.age} years old.`;
     }
 }
