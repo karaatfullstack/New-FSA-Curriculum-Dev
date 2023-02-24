@@ -73,25 +73,40 @@ const deleteTodo = (id) => {
 };
 
 // toggle checkbox true or false
-const toggleTodo = (id) => {
-    fetch(`${BASE_URL}/todos/${id}`, {
+const toggleCheckbox = async(id) => {
+    const res = await fetch(`${BASE_URL}/todos/${id}`);
+    
+    console.log("original response", res);
+
+    const todo = await res.json();
+
+    console.log("todo done before", todo.done);
+
+    // toggle true if checked and false if not checked
+    todo.done = !todo.done;
+
+    console.log("todo done after", todo.done);
+
+    const response = await fetch(`${BASE_URL}/todos/${id}`, {
         headers: { "Content-Type": "application/json; charset=utf-8" },
         method: 'PUT',
-        body: JSON.stringify({
-            todo: todo
-        })
-    })
-        // .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            todos.push(data);
-            renderTodos();
-        });
+        body: JSON.stringify(todo)
+    });
+
+    console.log("response", response);
+
+    const data = await response.json();
+
+    console.log("data", data);
+
+    todos.splice(todos.findIndex(todo => todo._id === id), 1, data);
+
+    renderTodos();
 };
 
-root.addEventListener('change', (e) => {
+root.addEventListener('click', (e) => {
     if (e.target.classList.contains('checkbox')) {
         const id = e.target.parentElement.getAttribute('key');
-        toggleTodo(id);
+        toggleCheckbox(id);
     }
 });
