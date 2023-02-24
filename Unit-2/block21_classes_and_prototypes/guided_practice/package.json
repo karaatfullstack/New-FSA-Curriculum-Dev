@@ -4,9 +4,17 @@
   "description": "1. This code defines three classes: Home, SingleFamilyHome, and Apartment. The Home class is the base class and has three properties: rooms, bathrooms, and squareFeet. It also has a method, getInfo, which returns a string containing information about the home.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test",
+    "test-watch": "jest --watch",
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.4.3"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
 }

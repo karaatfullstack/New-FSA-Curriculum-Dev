@@ -40,7 +40,7 @@ ElectricCar.prototype.getDescription = function() {
 };
 
 /* Creating a new Car object with the make Ford, model F-150, and year 2021. */
-export const myTruck = new Car("Ford", "F-150", 2021);
+const myTruck = new Car("Ford", "F-150", 2021);
 
 console.log(myTruck.getDescription());
 
@@ -48,3 +48,5 @@ console.log(myTruck.getDescription());
 const myTesla = new ElectricCar("Tesla", "Model S", 2019, 300);
 
 console.log(myTesla.getDescription());
+
+module.exports = { Car, ElectricCar };

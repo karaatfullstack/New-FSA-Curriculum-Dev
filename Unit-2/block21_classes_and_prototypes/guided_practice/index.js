@@ -49,3 +49,9 @@ console.log(home3.getInfo()); // Output: "This home has 2 rooms, 1 bathroom, and
 console.log(home1 instanceof Home); // Output: true
 console.log(home2 instanceof SingleFamilyHome); // Output: true
 console.log(home3 instanceof Apartment); // Output: true
+
+module.exports = {
+  Home,
+  SingleFamilyHome,
+  Apartment
+};
