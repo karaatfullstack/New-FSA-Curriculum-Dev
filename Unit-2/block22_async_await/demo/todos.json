@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "todo": "Buy milk",
+        "done": false
+    },
+    {
+        "id": 2,
+        "todo": "Buy eggs",
+        "done": false
+    },
+    {
+        "id": 3,
+        "todo": "Buy bread",
+        "done": false
+    },
+    {
+        "id": 4,
+        "todo": "Buy cheese",
+        "done": false
+    },
+    {
+        "id": 5,
+        "todo": "Buy butter",
+        "done": false
+    }
+]
