@@ -1,10 +1,5 @@
 //import sum from index.js
-const {sum, multiply, stringOrNot, fizzBuzz} = require('./index');
-
-//test function sum
-test('adds 1 + 2 to equal 3', () => {
-    expect(sum(2, 1)).toBe(3);
-});
+const {multiply, stringOrNot, fizzBuzz} = require('./index');
 
 // test function multiply
 test('multiply 2 * 2 to equal 4', () => {
