@@ -1,15 +1,9 @@
-function calculateAge(birthYear) {
-    const currentYear = new Date().getFullYear();
-    return currentYear - birthYear;
-}
+function generateRandomPhoneNumber(a, b, c) {
+    const areaCode = Math.floor(Math.random() * (a * 100)) + 100;
+    const prefix = Math.floor(Math.random() * (b * 100)) + 100;
+    const lineNumber = Math.floor(Math.random() * (c * 1000)) + 1000;
+    return `(${areaCode}) ${prefix}-${lineNumber}`;
+  }
 
-const canDrive = (age) => age >= 18;
 
-// STRETCH GOAL - function `calculateCanDrive` takes birth year, calculates age, and returns true if age is 18 or older
-function calculateCanDrive(birthYear) {
-    const currentYear = new Date().getFullYear();
-    const age = currentYear - birthYear;
-    return age >= 18;
-}
-
-module.exports = {calculateAge, canDrive, calculateCanDrive};
+module.exports = {generateRandomPhoneNumber};
