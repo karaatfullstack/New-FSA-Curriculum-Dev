@@ -9,7 +9,13 @@
  * _unless_ either of the parameters is not a number,
  * in which case the string `"error"` is returned.
  */
+function multiplyNumbers(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    return "error";
+  }
 
+  return a * b;
+}
 
 //#endregion Guard
 
@@ -21,7 +27,13 @@
  * @param {int[]} nums 
  * @returns the sum of the given array of numbers
  */
-
+function sumArray(nums) {
+  let total = 0;
+  for (const number of nums) {
+    total += number;
+  }
+  return total;
+}
 
 //#endregion Accumulator Variable
 
@@ -33,7 +45,15 @@
  * @param {int[]} nums 
  * @returns the greatest number in the given array
  */
-
+function findMax(nums) {
+  let max = -Infinity;
+  for (const number of nums) {
+    if (number > max) {
+      max = number;
+    }
+  }
+  return max;
+}
 
 //#endregion Conditional Accumulation
 
@@ -46,7 +66,14 @@
  * @param {string[]} playlist 
  * @returns whether the given song can be found in the playlist
  */
-
+function isSongInPlaylist(song, playlist) {
+  for (const s of playlist) {
+    if (s === song) {
+      return true;
+    }
+  }
+  return false;
+}
 
 //#endregion Return Timing
 
@@ -59,7 +86,17 @@
  * @param {number} rows 
  * @returns a 2D array of the given dimensions filled with "-"
  */
-
+function makeBoard(cols, rows) {
+  const board = [];
+  for (let r = 0; r < rows; r++) {
+    const row = [];
+    for (let c = 0; c < cols; c++) {
+      row.push("-");
+    }
+    board.push(row);
+  }
+  return board;
+}
 
 //#endregion Nested Loops and Arrays
 
@@ -74,8 +111,8 @@
  * Notice that the names are currently commented out.
  * Uncomment the functions as you write them.
  */
-module.exports = { 
-  multiplySum, 
+module.exports = {
+  multiplyNumbers,
   sumArray,
   findMax,
   isSongInPlaylist,
