@@ -245,29 +245,27 @@ describe('shareFirstLetter', () => {
     });
 });
 
-// test function getFirstLast(str)
+// test `getFirstLast(array)` returns a _new_ array that contains the first and last elements of the given array.
 describe('getFirstLast', () => {
     describe('works with correct types', () => {
         test('is a function', () => {
             expect(typeof code.getFirstLast).toEqual('function');
         });
-        test('returns a string', () => {
-            expect(typeof code.getFirstLast('string')).toEqual('string');
+        test('returns an array', () => {
+            expect(Array.isArray(code.getFirstLast([1, 2, 3]))).toEqual(true);
         });
 
-        describe('returns the correct string', () => {
-            test('returns the correct string for "string"', () => {
-                expect(code.getFirstLast('string')).toEqual('sg');
+        describe('returns the correct array', () => {
+            test('returns the correct array for [1, 2, 3]', () => {
+                expect(code.getFirstLast([1, 2, 3])).toEqual([1, 3]);
             });
-            test('returns the correct string for "a"', () => {
-                expect(code.getFirstLast('a')).toEqual('aa');
-            });
-            test('returns the correct string for ""', () => {
-                expect(code.getFirstLast('')).toEqual('');
+            test('returns the correct array for [1, 2]', () => {
+                expect(code.getFirstLast([1, 2])).toEqual([1, 2]);
             });
         });
     });
 });
+
 
 // test function shareLastDigit(num1, num2)
 describe('shareLastDigit', () => {

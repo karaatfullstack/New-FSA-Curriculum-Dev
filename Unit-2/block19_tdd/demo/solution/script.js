@@ -98,13 +98,8 @@ function shareFirstLetter(str1, str2) {
   return str1[0] === str2[0];
 }
 
-function getFirstLast(str) {
-  //handle empty string
-  if (str.length === 0) {
-    return "";
-  }
-
-  return str[0] + str[str.length - 1];
+function getFirstLast(array) {
+  return [array[0], array[array.length - 1]];
 }
 
 function shareLastDigit(num1, num2) {

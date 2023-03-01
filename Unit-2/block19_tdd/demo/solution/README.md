@@ -9,13 +9,13 @@ This is the first of many TDD activities!
 3. In your terminal, run `npm install`.
 4. In your terminal, run `npm test`.
 5. Complete Section 1.
-   1. You can change `describe(...)` to `describe.only(...)` in `script_test.js` if you would like to run _only_ that test spec.
+   1. You can change `test(...)` in `script.test.js` to suite your needs.
 6. Complete Section 2.
 7. Type `Control+C` in your terminal to close the Mocha process once you are done testing.
 
 ## Section 1
 
-In this section, your focus will be on identifying expectations and writing the correct test specs. For each prompt, you will have to complete the tests in `script_test.js` by replacing the `REPLACE_ME` sections with the correct code. Solution code has already been provided in `script.js`, which you should also use as reference!
+In this section, your focus will be on identifying expectations and writing the correct test specs. For each prompt, you will have to complete the tests in `script.test.js` by replacing the `REPLACE_ME` sections with the correct code. Solution code has already been provided in `script.js`, which you should also use as reference!
 
 ### add
 
@@ -58,7 +58,7 @@ sum([]); // >>> 0
 
 ## Section 2
 
-In this section, the tests have already been completed in `script_test.js`. For each prompt, read the problem carefully and identify expectations using the test specs. Then, write the corresponding function code in `script.js`.
+In this section, the tests have already been completed in `script.test.js`. For each prompt, read the problem carefully and identify expectations using the test specs. Then, write the corresponding function code in `script.js`.
 
 ### isPositive
 

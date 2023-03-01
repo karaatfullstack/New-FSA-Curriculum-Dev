@@ -64,4 +64,11 @@ module.exports = {
   subtract,
   greet,
   sum,
+  // isPositive,
+  // getFirst,
+  // getLast,
+  // findLeast,
+  // shareFirstLetter,
+  // getFirstLast,
+  // shareLastDigit,
 };
