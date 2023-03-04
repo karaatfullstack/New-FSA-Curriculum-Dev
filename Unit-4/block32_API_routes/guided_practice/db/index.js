@@ -1,4 +1,4 @@
 module.exports = {
-    ...require('./sales'),
-    ...require('./purchases')
+    ...require('./dogs'),
+    ...require('./cats')
 };

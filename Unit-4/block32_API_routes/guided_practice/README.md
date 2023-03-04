@@ -1,4 +1,4 @@
-# Make CRUD Routes with Express
+# CRUD Routes with Express and PostgreSQL
 
 ## Overview
 

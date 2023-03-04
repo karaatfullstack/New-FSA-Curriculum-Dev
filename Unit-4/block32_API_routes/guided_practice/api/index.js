@@ -6,10 +6,10 @@ router.get('/health', (req, res, next) => {
     res.send('OK');
 });
 
-// ROUTER: /api/sales
-router.use('/sales', require('./sales'));
+// ROUTER: /api/dogs
+router.use('/dogs', require('./dogs'));
 
-// ROUTER: /api/purchases
-router.use('/purchases', require('./purchases'));
+// ROUTER: /api/cats
+router.use('/cats', require('./cats'));
 
 module.exports = router;
