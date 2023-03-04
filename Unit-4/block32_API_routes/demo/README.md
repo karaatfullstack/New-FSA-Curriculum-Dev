@@ -14,7 +14,7 @@ Postman is a tool that allows you to test API routes. It is a great tool to use 
 
 ## PostgreSQL
 
-Be sure that your PostgreSQL server is running before you start this demo.
+Be sure that your PostgreSQL database is running before you start this demo.
 
 Login as a user with the `SUPERUSER` role. You can do this by running the following command in your terminal:
 

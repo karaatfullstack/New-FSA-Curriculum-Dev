@@ -1,9 +1,31 @@
-# Middleware with JWT
+# CRUD Routes with Express and PostgreSQL
 
 ## Overview
 
-In this workshop, you will learn how to use JWT to authenticate a user, receive a token, and use that token to access protected routes.
+In this workshop, you will learn how to create a RESTful API with Express using try / catch blocks. We'll also review body-parser and how to use it to parse the body of a request as well as CORS middleware.
 
-## JSON Web Tokens
+## PostgreSQL
 
-JSON Web Tokens (JWT) are an open, industry standard RFC 7519 method for representing claims securely between two parties. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA.
+Be sure that your PostgreSQL database is running before you start this demo.
+
+Login as a user with the `SUPERUSER` role. You can do this by running the following command in your terminal:
+
+```bash
+psql -U postgres
+```
+
+Create a new database called `gamestore`:
+
+```sql
+CREATE DATABASE gamestore;
+```
+
+## Workshop
+1. Clone this repo. 
+2. Navigate to the top folder that contains `package.json`.
+3. Run `npm install` to install the dependencies.
+4. Run `npm run seed` to seed the database.
+5. Run `npm start` to start the server.
+
+## Objectives
+
