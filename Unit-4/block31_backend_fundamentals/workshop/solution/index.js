@@ -9,8 +9,8 @@ const PORT = 8080;
 
 // GET - / - returns homepage
 app.get('/', (req, res) => {
-    // server up the index.html
-    res.sendFile(__dirname + '/index.html');
+    // server up the public folder as static index.html file
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 // hello world route
@@ -24,15 +24,26 @@ app.get('/api/v1/pets', (req, res) => {
     res.send(pets);
 });
 
-// get pet by id
-app.get('/api/v1/pets/:id', (req, res) => {
-    // get the id from the request params
-    const id = req.params.id;
-    // find the pet in the database
-    const pet = pets.find((pet) => {
-        return pet.id === parseInt(id);
-    });
-    console.log(pet);
+// get pet by name
+app.get('/api/v1/pets/:name', (req, res) => {
+    // get the name from the request
+    const name = req.params.name;
+
+    // find the pet in the pets array
+    const pet = pets.find(pet => pet.name === name);
+
+    // send the pet as a response
+    res.send(pet);
+});
+
+// get pet by owner with query string
+app.get('/api/v1/pets/owner', (req, res) => {
+    // get the owner from the request
+    const owner = req.query.owner;
+
+    // find the pet in the pets array
+    const pet = pets.find(pet => pet.owner === owner);
+
     // send the pet as a response
     res.send(pet);
 });

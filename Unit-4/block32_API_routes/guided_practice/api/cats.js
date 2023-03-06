@@ -1,13 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllCats, getCatById, createCat, updateCat, deleteCat } = require('../db/cats');
+const REPLACE_ME = 'HELP REPLACE ME!!!!';
+
+const { getAllCats, getCatById, updateCat, deleteCat } = require('../db');
 
 // GET - /api/cats - get all cats
 router.get('/', async (req, res, next) => {
     try {
         const cats = await getAllCats();
-        res.send(cats);
+        console.log(cats);
+        res.send(REPLACE_ME);
     } catch (error) {
         next(error);
     }

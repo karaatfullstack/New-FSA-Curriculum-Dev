@@ -1,9 +1,9 @@
 # Block 32: API Routes
 
 ## Contents
-- Demo - Biznus with PostgreSQL and Postman
+- Demo - Biznus CRUD with PostgreSQL and Postman
 - Guided Practice - Vet Clinic API
-- Workshop - GameStore Challenge
+- Workshop - GameStore 
 
 ## Learning Objectives
 - Use Express router and modules to create various functioning REST API endpoints

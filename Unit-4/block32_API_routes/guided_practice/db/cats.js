@@ -1,12 +1,12 @@
 const client = require('./client');
 const util = require('util');
 
+const REPLACE_ME = 'HELP REPLACE ME!!!!';
+
 // GET - /api/cats - get all cats
 async function getAllCats() {
     try {
-        const { rows } = await client.query(`
-      SELECT * FROM cats;
-    `);
+        const { rows } = REPLACE_ME;
         return rows;
     } catch (error) {
         throw error;

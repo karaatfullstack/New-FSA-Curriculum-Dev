@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { getPurchases, getPurchase, createPurchase, updatePurchase, deletePurchase } = require('../db/purchases');
+const { getPurchases, getPurchase, createPurchase, updatePurchase, deletePurchase } = require('../db');
 
 // GET - /api/purchases - get all purchases
 router.get('/', async (req, res, next) => {
