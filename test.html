@@ -18,7 +18,7 @@
         data-decorative="true"
       />
       <div class="header-bar color2-gradient" style="padding: 35px 40px 30px">
-        <h1>Block 32: API Routes</h1>
+        <h1>Block 32 Workshop: Gamestore</h1>
       </div>
       <div
         class="mobile-hide"
@@ -52,309 +52,170 @@
             width="1051"
             height="40"
             data-decorative="true"
-          /><span
-            style="
-              font-family: inherit;
-              font-size: 1.8em;
-              color: var(--ic-brand-font-color-dark);
-            "
-            >Learning Teams: Connecting</span
-          >
+          />
         </div>
       </div>
     </div>
   </div>
 </div>
-<h3>Discussion Prompt</h3>
-<p>As a team, discuss the following prompt:</p>
-<p>
-  <em
-    ><span
-      >How does Express.js make routing with JavaScript easier than using
-      Vanilla JS?</span
-    ></em
-  >
-</p>
-<p>
-  <em
-    ><span
-      >How are we doing on our team goals? Review them in
-      <a
-        title="Unit 1 Goals"
-        href="https://fullstack.instructure.com/courses/525/discussion_topics/806"
-        data-api-endpoint="https://fullstack.instructure.com/api/v1/courses/525/discussion_topics/806"
-        data-api-returntype="Discussion"
-        >this discussion thread</a
-      >.&nbsp;</span
-    ></em
-  >
-</p>
-<hr />
-<h2 id="overview">Lesson Overview</h2>
-<p>
-  In this lesson, we will learn about backend fundamentals in a Node.js
-  environment using our JavaScript skills.
-</p>
-<h3 id="creatingawebsite">Learning Objectives</h3>
-<ol>
-  <li aria-level="1">
-    Use Express router and modules to create various functioning REST API
-    endpoints
-  </li>
-  <li aria-level="1">
-    Apply REST API design best practices to server routing.
-  </li>
-  <li aria-level="1">
-    Create various functioning REST endpoints with proper CRUD operations using
-    `pg` and Express.js
-  </li>
-  <li aria-level="1">
-    Explain and demonstrate how the `pg` npm package is used to connect an
-    Express API server with a Postgres database
-  </li>
-</ol>
-<p>
-  There are 2<strong>&nbsp;tabs&nbsp;</strong>below. Complete the guided
-  practice, and use the lesson resources tab as needed.&nbsp;
-</p>
-<div class="enhanceable_content tabs">
-  <ul>
-    <li><a href="#fragment-1"> Lesson Resources </a></li>
-    <li><a href="#fragment-2">PostgreSQL Docs</a></li>
-    <li><a href="#fragment-3"> Guided Practice </a></li>
-  </ul>
-
-
-  <div id="fragment-1">
-    <h2>Lesson Resources</h2>
-    <iframe
-      src="https://docs.google.com/presentation/d/1avzLnZceBsosKewAhfJjAITfjOLErRiXV0AR8sPPuGE/embed?start=false&amp;loop=false&amp;delayms=3000"
-      width="100%"
-      height="500"
-      allowfullscreen="allowfullscreen"
-      webkitallowfullscreen="webkitallowfullscreen"
-      mozallowfullscreen="mozallowfullscreen"
-    ></iframe>
-  </div>
-
-
-
-    <div id="framgent-2">
-        <h2>PostgreSQL Documentation</h2>
-        <p>
-        It is always a good idea to start with a basic tutorial from the
-        documentation when working with a new software tool.
-        </p>
-        <p>
-        <a
-            href="https://www.postgresql.org/docs/9.5/static/tutorial.html"
-            target="_blank"
-            >PostgreSQL Tutorial</a
-        >
-        </p>
-        <p>
-        The documentation should be your first source of guidance and a singular
-        source of truth while developing.
-        </p>
-        <p>
-        <a
-            href="https://www.postgresql.org/docs/9.5/static/index.html"
-            target="_blank"
-            >PostgreSQL Documentation</a
-        >
-        </p>
-        <p>
-        When you are ready to start writing SQL queries, the documentation is a
-        great place to start. PostgreSQL commands are different than other
-        providers like MySQL or SQL Server.
-        </p>
-        <p>
-        <a
-            href="https://www.postgresql.org/docs/9.5/static/sql-commands.html"
-            target="_blank"
-            >PostgreSQL SQL Commands</a
-        >
-        </p>
+<div
+  class="content-box"
+  style="overflow: hidden; margin-top: -30px; padding: 0 2%"
+>
+  <h2 id="overview">Overview</h2>
+  <p>
+    Complete the following coding challenges using what you know about CRUD
+    operations and asynchronous JavaScript. You will be creating a RESTful API
+    to serve data to a PostgreSQL database.
+  </p>
+  <h3 id="creatingawebsite">Directions</h3>
+  <p>
+    We have some starter code and it is our job to fix the problems with the
+    Gamestore API. In this workshop, we will be troubleshooting issues using
+    Postman and the available software.
+  </p>
+  <ol>
+    <li>Navigate to the GitHub repo for Block 32: Workshop</li>
+    <li>
+      Using what we know about CRUD operations and other asynchronous JavaScript
+      basics, pseudocode the prompts found in each tab below.
+    </li>
+    <li>
+      After coming up with logical solutions for each prompt, begin the
+      assignment.
+    </li>
+    <li>
+      Clone the starter repository found here, navigate to the directory, and
+      run `npm install` from the terminal.
+    </li>
+    <li>
+      <p>
+        The available database has two tables (video games and board games) with
+        CRUD operations. With video games, for example:
+      </p>
+      <ul>
+        <li>Get all video games</li>
+        <li>Get video games by id</li>
+        <li>Add video games</li>
+        <li>Update video games by id</li>
+        <li>Delete video games by id</li>
+      </ul>
+      <p>
+        *Stretch Goal* - Server an index.html or React application that makes it
+        a full stack web application.
+      </p>
+    </li>
+  </ol>
+  <p>There are 4<strong>&nbsp;tabs&nbsp;</strong>below.</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="enhanceable_content tabs">
+    <ul>
+      <li><a href="#fragment-2">GET - all video games</a></li>
+      <li><a href="#fragment-3">GET - video game by id</a></li>
+      <li><a href="#fragment-4">POST - create video game</a></li>
+      <li><a href="#fragment-5">PUT - update video game</a></li>
+      <li><a href="#fragment-6">DELETE - delete video game</a></li>
+    </ul>
+    <div id="fragment-2">
+        <h2>GET - all video games</h2>
+        <p>Write a function that gets a video game by id from the database.</p>
+        <p>Hint: Use the <code>getAllVideoGames()</code> function.</p>
+        <details>
+            <summary>Click to see solution</summary>
+            <pre><code>
+async function getAllVideoGames() {
+    try {
+        const { rows: videoGames } = await client.query(`
+            SELECT * FROM videoGames;
+        `);
+        return videoGames;
+    } catch (error) {
+        throw error; 
+    }
+}
+</code></pre>
+        </details>
     </div>
 
-  <div id="fragment-3">
-    <h2>Guided Practice</h2>
-    <p>Begin with our database:</p>
-    <ol style="list-style-type: decimal">
-      <li>
-        Check for `psql` in your terminal. If it is not installed, install it.
+    <div id="fragment-3">
+        <h2>GET - video game by id</h2>
+        <p>Write a function that gets a video game by id from the database.</p>
+        <p>Hint: Use the <code>getVideoGameById()</code> function.</p>
         <details>
-          <summary>Show Answer</summary>
-          <pre><code>
-$ psql -version
-            </code></pre>
-          </code></pre>
+            <summary>Click to see solution</summary>
+            <pre><code>
+                router.get('/:id', async (req, res, next) => {
+                    try {
+                        const videoGame = await getVideoGameById(req.params.id);
+                        res.send(videoGame);
+                    } catch (error) {
+                        next(error);
+                    }
+                });
+                                      
+                    </code></pre>
         </details>
-      </li>
-      <li>
-        Log into `psql` with your username.
-        
+    </div>
+
+    <div id="fragment-4">
+        <h2>POST - create video game</h2>
+        <p>Write a function that creates a video game in the database.</p>
+        <p>Hint: Use the <code>createVideoGame()</code> function.</p>
         <details>
-          <summary>Show Answer</summary>
-          <pre><code>
-  $ psql -U postgres
-            </code></pre>
-        </details>
-      </li>
-      <li>
-        Create a new database called `vetclinic`.
-        <details>
-          <summary>Show Answer</summary>
-          <pre><code>
-CREATE DATABASE vetclinic;
-            </code></pre>
-        </details>
-      </li>
-    </ol>
-    <p>Now, lets work with the API.</p>
-    <ol style="list-style-type: decimal">
-      <li>
-        Clone the repo from GitHub and install the dependencies.
-        <details>
-          <summary>Show Answer</summary>
-          <pre><code>
-$ npm install
+            <summary>Click to see solution</summary>
+            <pre><code>
+// the method is incorrect and should be "post"; not "patch"                
+router.post('/', async (req, res, next) => {
+...
+});
             </code></pre>
         </details>
-      </li>
-      <li>We need to seed our database with some initial data. Open your `package.json` file to find the script to seed.
+
+    </div>
+
+    <div id="fragment-5">
+        <h2>PUT - update video game</h2>
+        <p>Write a function that updates a video game in the database.</p>
+        <p>Hint: Use the <code>updateVideoGame()</code> function.</p>
         <details>
-          <summary>Show Answer</summary>
-          <pre><code>
-"scripts": {
-    "seed": "node ./db/seeds.js"
-    },
-                </code></pre>
-            </details>
-      </li>
-        <li>
-            Run the seed script.
-            <details>
-            <summary>Show Answer</summary>
+            <summary>Click to see solution</summary>
             <pre><code>
-$ npm run seed
+                router.put('/:id', async (req, res, next) => {
+                    try {
+                        const videoGame = await updateVideoGame(req.params.id, req.body);
+                        res.send(videoGame);
+                    } catch (error) {
+                        next(error);
+                    }
+                });
+
             </code></pre>
-            </details>
-        </li>
-        <li>Uh oh. We got an error after "Creating Initial Appointments..." What should we do?
-            <details>
-            <summary>Show Answer</summary>
+        </details>
+    </div>
+
+    <div id="fragment-6">
+        <h2>DELETE - delete video game</h2>
+        <p>Write an asynchronous database query function that deletes a video game from the database.</p>
+        <p>Hint: Use the <code>deleteVideoGame()</code> function.</p>
+        <details>
+            <summary>Click to see solution</summary>
             <pre><code>
-// We need to correct the dogs table and the "ages" value to be named "age"
-CREATE TABLE dogs(
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    breed VARCHAR(255) NOT NULL,
-    age INTEGER NOT NULL, ## This should be age, not ages
-    weight INTEGER NOT NULL,
-    owner VARCHAR(255) NOT NULL,
-    checked_in BOOLEAN DEFAULT false
-);
-// Run the seed script again
-            </code></pre>
-            </details>
-        </li>
-        <li>
-            Start the server. The development script can be found in the `package.json` file.
-            <details>
-            <summary>Show Answer</summary>
-            <pre><code>
-$ npm run start:dev
-            </code></pre>
-            </details>
-        </li>
-        <li>
-            Open the browser and navigate to `localhost:8080/api/cats`. There's an error! What should we do?
-            <details>
-            <summary>Show Answer</summary>
-            <pre><code>
-// In the './db/cats.js' file, we need to write an async database query to select all entries from the cats table.
-async function getAllCats(){
+async function deleteVideoGame(id) {
     try {
-        const {rows} = await client.query(`
-            SELECT * FROM cats;
-        `);
-        return rows;
+        const { rows: [videoGame] } = await client.query(`
+            DELETE FROM videoGames
+            WHERE id=$1
+            RETURNING *;
+        `, [id]);
+        return videoGame;
     } catch (error) {
         throw error;
     }
 }
-// In the './api/cats.js' file, we need to call the getAllCats function and await the response.
-router.get('/', async (req, res, next) => {
-    try {
-        const cats = await getAllCats();
-        res.send(cats);
-    } catch (error) {
-        next(error);
-    }
-});
             </code></pre>
-            </details>
-        </li>
-        <li>
-            Time to use Postman to test a POST request. Open Postman and create a new request at `localhost:8080/api/cats`. We have another error! What should we do?
-            <details>
-            <summary>Show Answer</summary>
-            <pre><code>
-// In the './api/cats.js' file, we need to call the createCat function and await the response.
-const { getAllCats, getCatById, createCat, updateCat, deleteCat } = require('../db');
-            </code></pre>
-            </details>
-        </li>
-        <li>
-            Now that we have our POST request working, we can test our GET request. How should your test look?
-            <details>
-            <summary>Show Answer</summary>
-            <p>An example - your values may differ, but the keys should be the same.</p>
-            <pre><code>
-{
-    "name": "Mittens",
-    "breed": "Tabby",
-    "age": 2,
-    "weight": 10,
-    "owner": "John Smith",
-    "checked_in": false
-}
-            </code></pre>
-            </details>
-        </li>
-        <li>
-            We should test our PUT request to edit data. Using Postman, update our new cat, Mittens, to be checked in.
-            <details>
-            <summary>Show Answer</summary>
-            <p>An example - yours may differ.</p>
-            <pre><code>
-{
-    "name": "Mittens",
-    "breed": "Tabby",
-    "age": 2,
-    "weight": 10,
-    "owner": "John Smith",
-    "checked_in": true
-}
-            </code></pre>
-            </details>
-        </li>
+        </details>
 
-        <li>
-            We should test our DELETE request to delete data. Using Postman, delete our new cat, Mittens.
-            <details>
-            <summary>Show Answer</summary>
-            <p>DELETE - localhost:8080/api/cats/(THE ID OF MITTENS)</p>
-            </details>
-        </li>
-    </ol>
-     
-</div>
 
-</div>
-<h2><strong style="color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem;">Done?</strong><span style="color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem;"> Make sure you've completed both tabs above:</span></h2>
-<ul>
-<li><span style="color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem;">Lesson Resources</span></li>
-<li><span style="color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem;">Guided Practice</span></li>
-</ul>
+
+      

@@ -1,12 +1,12 @@
 const client = require('./client');
 const util = require('util');
 
+const REPLACE_ME = 'HELP REPLACE ME!!!!';
+
 // GET - /api/video-games - get all video games
 async function getAllVideoGames() {
     try {
-        const { rows: videoGames } = await client.query(`
-            SELECT * FROM videoGames;
-        `);
+        const { rows: videoGames } = await client.query(REPLACE_ME);
         return videoGames;
     } catch (error) {
         throw error; 

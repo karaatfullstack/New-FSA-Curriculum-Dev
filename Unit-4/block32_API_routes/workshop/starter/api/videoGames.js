@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const REPLACE_ME = 'HELP REPLACE ME!!!!';
+
 const { getAllVideoGames,
     getVideoGameById,
     createVideoGame,
@@ -20,7 +22,7 @@ router.get('/', async (req, res, next) => {
 // GET - /api/video-games/:id - get a single video game by id
 router.get('/:id', async (req, res, next) => {
     try {
-        const videoGame = await getVideoGameById(req.params.id);
+        const videoGame = await getVideoGameById(REPLACE_ME);
         res.send(videoGame);
     } catch (error) {
         next(error);
@@ -28,7 +30,7 @@ router.get('/:id', async (req, res, next) => {
 });
 
 // POST - /api/video-games - create a new video game
-router.post('/', async (req, res, next) => {
+router.patch('/', async (req, res, next) => {
     try {
         const videoGame = await createVideoGame(req.body);
         const existingVideoGame = await getVideoGameById(videoGame.id);
@@ -54,7 +56,7 @@ router.post('/', async (req, res, next) => {
 // PUT - /api/video-games/:id - update a single video game by id
 router.put('/:id', async (req, res, next) => {
     try {
-        const videoGame = await updateVideoGame(req.params.id, req.body);
+        const videoGame = await updateVideoGame(REPLACE_ME, REPLACE_ME);
         res.send(videoGame);
     } catch (error) {
         next(error);
