@@ -1,12 +1,35 @@
-# User Database with SQL Queries
+# Journalista API
+an API for our journlist community using node, express, and postgresql
 
-## Overview
+# Postgres Setup
 
-Create a user database with SQL queries.
+Postgres should be installed and working at port 5432.
 
-## PostgreSQL
+Login as postgres user
 
-PostgreSQL is a powerful, open source object-relational database system. It has more than 15 years of active development and a proven architecture that has earned it a strong reputation for reliability, data integrity, and correctness.
+    sudo -u postgres psql ## on mac or linux
 
-PostgreSQL online query tool: [http://sqlfiddle.com/](http://sqlfiddle.com/)
-W3Resource SQL tutorial: [https://www.w3resource.com/PostgreSQL/tutorial.php](https://www.w3resource.com/PostgreSQL/tutorial.php)
+    or 
+
+    psql -U postgres ## on windows
+
+Initialize Database
+
+    CREATE DATABASE journalista;
+
+Show all databases to confirm
+
+    \l
+
+## Getting Started
+Install Packages
+
+    npm i
+
+Seed Database
+
+    npm run seed    
+    
+Start Server
+
+    npm run start:dev
