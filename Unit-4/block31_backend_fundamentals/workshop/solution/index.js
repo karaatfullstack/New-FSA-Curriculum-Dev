@@ -7,6 +7,12 @@ const app = express();
 
 const PORT = 8080;
 
+// GET - / - returns homepage
+app.get('/', (req, res) => {
+    // server up the index.html
+    res.sendFile(__dirname + '/index.html');
+});
+
 // hello world route
 app.get('/api', (req, res) => {
     res.send('Hello World!');

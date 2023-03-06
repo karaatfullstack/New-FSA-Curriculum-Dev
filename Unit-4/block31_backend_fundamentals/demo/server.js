@@ -35,7 +35,7 @@ app.get('/api/query', (req, res) => {
     res.send(`Returning any test as a - ${query}`);
 });
 
-// dyanmic route with query
+// dynamic route with query
 app.get('/api/:string/query', (req, res) => {
     const { string } = req.params;
     const { query } = req.query;
