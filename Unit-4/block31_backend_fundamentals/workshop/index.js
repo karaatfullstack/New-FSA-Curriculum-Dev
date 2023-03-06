@@ -7,19 +7,9 @@ const app = express();
 
 const PORT = 8080;
 
-// fs module
-const fs = require('fs');
-
-// render html from `../client/index.html`
-app.get('/', (req, res) => {
-    // server up the index.html using fs
-    fs.readFile('../client/index.html', (err, data) => {
-        if (err) {
-            console.log(err);
-        } else {
-            res.send(data.toString());
-        }
-    });
+// hello world route
+app.get('/api', (req, res) => {
+    res.send('Hello World!');
 });
 
 // get all pets from the database
