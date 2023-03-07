@@ -1,0 +1,145 @@
+<div class="content-box" style="max-width: 1126px; margin: 0px -12px; padding: 0 12px;">
+    <div class="grid-row">
+        <div class="col-xs-12 col-md-12" style="overflow: hidden; position: relative;"><img class="rotate-180 opacity-half" style="height: 60px; vertical-align: middle;" role="presentation" src="https://content.bridgepointeducation.com/curriculum/file/f881c28d-b8b7-4695-a677-bed16afbf12d/1/Shadow.png" alt=" " width="1051" height="60" data-decorative="true" />
+            <div class="header-bar color2-gradient" style="padding: 35px 40px 30px;">
+                <h1>Block 33 Workshop: Fitness Trackr</h1>
+            </div>
+            <div class="mobile-hide" style="position: absolute; top: 30px; margin: 0 45px;">
+                <div class="accent-header color1-gradient letter-spaced uppercase" style="padding: 5px 30px 5px; background: #fff;">
+                    <h2>Unit 4</h2>
+                </div>
+                <img class="" style="width: 0; min-width: 100%; height: 40px;" role="presentation" src="https://content.bridgepointeducation.com/curriculum/file/f881c28d-b8b7-4695-a677-bed16afbf12d/1/Shadow.png" alt=" " width="177" height="40" data-decorative="true" />
+            </div>
+            <div>
+                <div style="padding: 0 0 20px;"><img class="" style="height: 40px; width: 100%;" role="presentation" src="https://content.bridgepointeducation.com/curriculum/file/f881c28d-b8b7-4695-a677-bed16afbf12d/1/Shadow.png" alt=" " width="1051" height="40" data-decorative="true" /></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-box" style="overflow: hidden; margin-top: -30px; padding: 0 2%;">
+    <h2 id="overview">Overview</h2>
+    <p>Complete the following coding challenges using what you know about Node.js runtime, Express.js CRUD routes, middleware, and PostgreSQL databases.</p>
+    <h3 id="directions">Directions</h3>
+    <p>You've found an awesome open-source project Fitness Trackr that you think can really help you meet some fitness goals in the future. All you've gotta do is practice all of your knowledge and make this awesome API interactive in the browser!</p>
+    <ol>
+        <li>Navigate to the GitHub repo for Block 33: Workshop</li>
+        <li>Clone the repository and install the dependencies.</li>
+        <li>Work the tabs below.</li>
+    </ol>
+    <p>There are 7<strong>&nbsp;tabs&nbsp;</strong>below.</p>
+    <div class="enhanceable_content tabs">
+        <ul>
+            <li><a href="#fragment-1">Database and Seed Data</a></li>
+            <li><a href="#fragment-2">GET All Route</a></li>
+            <li><a href="#fragment-3">GET One by ID Route</a></li>
+            <li><a href="#fragment-4">POST Route</a></li>
+            <li><a href="#fragment-5">PUT Route</a></li>
+            <li><a href="#fragment-6">DELETE Route</a></li>
+            <li><a href="#fragment-7">*STRETCH GOAL* - Frontend</a></li>
+        </ul>
+        <div id="fragment-1">
+            <h2>Database and Seed Data</h2>
+            <p>Using your knowledge of PostgreSQL and Express.js gained in prior projects, create a database and seed data. You can use past projects as a reference. You will encounter errors, so be sure to troubleshoot them.</p>
+            <details>
+                <summary>Steps to Create Database</summary>
+                <ol>
+                    <li>Ensure PostgreSQL is running.</li>
+                    <li>Login to PostgreSQL as a super user.</li>
+                    <li>Create a database.</li>
+                </ol>
+            </details>
+            <details>
+                <summary>Steps to Initalize Project</summary>
+                <ol>
+                    <li>Download repository.</li>
+                    <li>Install packages.</li>
+                </ol>
+            </details>
+            <details>
+                <summary>Steps to Create Seed Data</summary>
+                <ol>
+                    <li>Review all scripts in `package.json` file.</li>
+                    <li>Run the script to seed database.</li>
+                  <li>Should receive message: "Finished creating routine_activities!"</li>
+                </ol>
+            </details>
+            <details>
+                <summary>Steps to Start Project</summary>
+                <ol>
+                    <li>Return to review all scripts in `package.json` file, if necessary.</li>
+                    <li>Run the script to start the project.</li>
+                    <li>Should receive message: "Server is listening on PORT: 8080 Get your routine on!"</li>
+                </ol>
+            </details>
+        </div>
+        <div id="fragment-2">
+            <h2>GET All Route</h2>
+            <p>Check routes that returns all of the data in the database. You can use past projects as a reference. You should not encounter errors at this point. If done properly, then you will be familiarizing yourself with the available set of data.</p>
+            <details>
+                <summary>Steps to Test GET All Route</summary>
+                <p>Using your browser or Postman:</p>
+                <ol>
+                    <li>Make a GET request to the "activities" endpoint.</li>
+                    <li>Make a GET request to the "routines" endpoint.</li>
+                    <li>Make a GET request to the "routine_activities" endpoint.</li>
+                </ol>
+            </details>
+        </div>
+        <div id="fragment-3">
+            <h2>GET One by ID Route</h2>
+            <p>Create a GET route that returns one record from the database by ID. You can use past projects as a reference. You will encounter errors, so be sure to troubleshoot them.</p>
+            <details>
+                <summary>Steps to Test GET One by ID Route</summary>
+                <p>Using your browser or Postman:</p>
+                <ol>
+                    <li>Make a GET request to the "activities" endpoint with an ID.</li>
+                    <li>Make a GET request to the "routines" endpoint with an ID.</li>
+                    <li>Uh oh. We've got an error. You will need to debug the "routines" endpoint before continuing.</li>
+                </ol>
+            </details>
+        </div>
+        <div id="fragment-4">
+            <h2>POST Route</h2>
+            <p>Now you will be adding data to the database by sending a POST request in the body of the request.</p>
+            <details>
+                <summary>Steps for a POST Request</summary>
+                <ol>
+                    <li>Open Postman or Insomnia.</li>
+                    <li>Make a POST request to the "activities" endpoint. You will need authorization!</li>
+                    <li>Register a new user or login with credentials from the seed database.</li>
+                    <li>Add the token to your POST request and continue adding a new activity.</li>
+                    <li>Make a POST request to the "routines" endpoint. Remember, you will need authorization!</li>
+                    <li>Uh oh. We've got an error. You will need to debug the "routines" endpoint before continuing.</li>
+                </ol>
+            </details>
+        </div>
+        <div id="fragment-5">
+            <h2>PUT Route</h2>
+            <p>Create a PUT route that updates a record in the database. You can use past projects as a reference. You will encounter errors, so be sure to troubleshoot them.</p>
+            <details>
+                <summary>Steps to Create PUT Route</summary>
+                <ol>
+                    <li>Create a route file.</li>
+                    <li>Import the route file into the server file.</li>
+                    <li>Test the route in Postman or Insomnia.</li>
+                </ol>
+            </details>
+        </div>
+        <div id="fragment-6">
+            <h2>DELETE Route</h2>
+            <p>Create a DELETE route that deletes a record from the database. You can use past projects as a reference. You will encounter errors, so be sure to troubleshoot them.</p>
+            <details>
+                <summary>Steps to Create DELETE Route</summary>
+                <ol>
+                    <li>Create a route file.</li>
+                    <li>Import the route file into the server file.</li>
+                    <li>Test the route in Postman or Insomnia.</li>
+                </ol>
+            </details>
+        </div>
+        <div id="fragment-7">
+            <h2>*STRETCH GOAL* - Frontend</h2>
+            <p>Create a frontend for your API that allows users to interact with the data.</p>
+        </div>
+    </div>
+</div>
