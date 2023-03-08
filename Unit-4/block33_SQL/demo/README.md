@@ -22,6 +22,7 @@ Show all databases
     \l
 
 Connect to database
+
     \c bikesbikesbikes
 
 ## Getting Started
