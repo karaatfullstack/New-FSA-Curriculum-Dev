@@ -1,8 +1,8 @@
 # Block 33: SQL
 
 ## Contents
-- Demo - Server with PostgreSQL Database
-- Guided Practice - User Database with SQL Queries
+- Demo - Bikes Bikes Bikes!
+- Guided Practice - Journalista
 - Workshop - FitnessTrackr API
 
 ## Learning Obejctives

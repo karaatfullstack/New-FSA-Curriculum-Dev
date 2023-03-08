@@ -11,7 +11,7 @@ router.get('/health', async (req, res, next) => {
     const uptime = process.uptime();
     const {rows: [dbConnection]} = await client.query('SELECT NOW();');
     const currentTime = new Date();
-    const lastRestart = new Intl.DateTimeFormat('en', {timeStyle: 'long', dateStyle: 'long', timeZone: "America/Los_Angeles"}).format(currentTime - (uptime * 1000));
+    const lastRestart = new Intl.DateTimeFormat('en', {timeStyle: 'long', dateStyle: 'long', timeZone: "America/Chicago"}).format(currentTime - (uptime * 1000));
     res.send({message: 'healthy', uptime, dbConnection, currentTime, lastRestart});
   } catch (err) {
     next(err);
@@ -59,12 +59,12 @@ router.use((req, res, next) => {
 const usersRouter = require('./users');
 router.use('/users', usersRouter);
 
-// ROUTER: /api/artists
-const artistsRouter = require('./artists');
-router.use('/artists', artistsRouter);
+// ROUTER: /api/bikes
+const bikesRouter = require('./bikes');
+router.use('/bikes', bikesRouter);
 
-// ROUTER: /api/songs
-const songsRouter = require('./songs');
-router.use('/songs', songsRouter);
+// ROUTER: /api/rentals
+const rentalsRouter = require('./rentals');
+router.use('/rentals', rentalsRouter);
 
 module.exports = router;

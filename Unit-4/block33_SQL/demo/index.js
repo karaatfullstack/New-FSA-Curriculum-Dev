@@ -33,5 +33,5 @@ server.use((error, req, res, next) => {
 });
 
 server.listen(PORT, () => {
-  console.log(chalk.blueBright('Server is listening on PORT:'), chalk.yellow(PORT), chalk.blueBright('Get your muzak playlist on!'));
+  console.log(chalk.blueBright('Server is listening on PORT:'), chalk.yellow(PORT), chalk.blueBright('Let the bikes roll!'));
 });
