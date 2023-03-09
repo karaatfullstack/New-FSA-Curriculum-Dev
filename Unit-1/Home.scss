@@ -1,0 +1,125 @@
+
+.Frontpage {   //Used for web page heading 
+
+  color: rgb(190, 51, 9); 
+  font-size: 60px;
+}
+
+body {             // used for background image of the web page
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 6%;
+}
+
+p {               // Paragraph in container (row and column)
+
+  text-align: center;
+}
+
+h1 {            // Heading 
+
+  text-align: center;
+  align-items: center;
+}
+
+h6 {            // heading
+
+  text-align: center;
+  align-items: center;
+  color:transparent;
+}
+
+ul {                          //used for navigation bar
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: rgb(2, 2, 2);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  //Used for card using row and column
+
+  .card {                           // used to display container in card format inside row and column
+    padding: 1px;
+    margin-left: 130px;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 10px;
+  }
+
+  .drinks_card{                    // used to display to beverage card 
+    padding: 1px;
+    margin-left: 158%;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 10px;
+  }
+
+
+  .row:after {                    //used for row after 
+    display: table;
+    clear: both;
+  }
+
+
+  .column {                     // used for column display
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+
+  h3 {                        // used to display heading in size h3
+       
+    text-align: center;
+    align-items: center;
+    margin-left: 69px;
+  }
+
+  // Container class
+  .container {
+    background: rgba(255, 255, 255, 0.05);
+    margin: 10px;
+    box-shadow: 0 15px 35px rgb(0 0 0 / 50%);
+   
+  }
+
+
+  // styles for footer
+  .footdiv{
+padding-left: 45%;
+padding-bottom: 20px;
+  }
+
+  .footer{
+color: rgb(29, 16, 216);
+  }
+
+  // properties when mouse hover over the footer text
+  .footer:hover{
+    text-transform: to-upper-case($string: "Go back to the top"); 
+    text-size-adjust: calc(20);
+    color: orangered;
+    text-decoration: underline;
+  }
+
+  .item_image{                     //used to display image border and style 
+    border-radius: 20px;
+    border-style: double;
+  }
+
+  .item_image:hover{              // After hover image will enlarge 
+    width: 215px;
+    height: 215px;
+  }
