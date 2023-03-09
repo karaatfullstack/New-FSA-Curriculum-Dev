@@ -1,0 +1,121 @@
+.Frontpage {
+  color: rgb(190, 51, 9);
+  font-size: 60px;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 6%;
+}
+
+p {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  align-items: center;
+}
+
+h6 {
+  text-align: center;
+  align-items: center;
+  color: transparent;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: rgb(2, 2, 2);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #6babc5;
+}
+
+.active {
+  background-color: transparent;
+}
+
+.card {
+  padding: 1px;
+  margin-left: 130px;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.drinks_card {
+  padding: 1px;
+  margin-left: 158%;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.row:after {
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+h3 {
+  text-align: center;
+  align-items: center;
+  margin-left: 69px;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.05);
+  margin: 10px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.footdiv {
+  padding-left: 45%;
+  padding-bottom: 20px;
+}
+
+.footer {
+  color: rgb(29, 16, 216);
+}
+
+.footer:hover {
+  text-transform: "GO BACK TO THE TOP";
+  text-size-adjust: 20;
+  color: orangered;
+  text-decoration: underline;
+}
+
+.item_image {
+  border-radius: 20px;
+  border-style: double;
+}
+
+.item_image:hover {
+  width: 215px;
+  height: 215px;
+}
+
+/*# sourceMappingURL=Home.css.map */
