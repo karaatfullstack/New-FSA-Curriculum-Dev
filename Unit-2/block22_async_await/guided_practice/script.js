@@ -1,31 +1,28 @@
-const countries = document.getElementById("countries");
+const loginForm = document.querySelector('#login-form');
+const loginInput = document.querySelector('#login-form input');
+const greeting = document.querySelector('#greeting');
 
-async function getCountries() {
-    fetch("https://restcountries.com/v3.1/all")
-        .then((response) => response.json())
-        .then((data) => {
-            data.forEach((country) => {
-                console.log(country);
+const HIDDEN_CLASSNAME = 'hidden';
 
-                // template literal to render country name, flag, capital, region, and population as <li>
-                const countryList = document.createElement("li");
-                countryList.innerHTML = `
-                    <h2><a href="">${country.name.common}</a></h2>
-                    <img src="${country.flags.svg}" alt="${country.name.common} flag" height="100" width="200" />
-                    <p class="capital-text">Capital: ${country.capital}</p>
-                    <p class="region-text">Region: ${country.region}</p>
-                    <p class="population-text">Population: ${country.population}</p>
-                `;
-
-                // add class 'country' to each <li>
-                countryList.classList.add("country-card");
-
-                countries.appendChild(countryList);
-            });
-        });
+function onLoginSubmit(event) {
+    event.preventDefault();
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value;
+    localStorage.setItem('username', username);
+    paintGreetings(username);
 }
 
-getCountries();
+function paintGreetings(username) {
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+}
 
-// export getCountries for testing
-// module.exports = getCountries;
+const savedUsername = localStorage.getItem('username');
+
+if (savedUsername === null) {
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener('submit', onLoginSubmit);
+}
+else {
+    paintGreetings(savedUsername);
+}
