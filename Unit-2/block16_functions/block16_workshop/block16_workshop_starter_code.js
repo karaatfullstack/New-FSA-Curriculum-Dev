@@ -1,7 +1,7 @@
 // Do not change the code below
 const timmy = {
 	prescription: "acetaminophen",
-	price: 25,
+	pricePerRefill: 25,
 	refills: 3,
 	subscription: false,
 	coupon: true
@@ -9,7 +9,7 @@ const timmy = {
 
 const sarah = {
 	prescription: "diphenhydramine",
-	price: 40,
+	pricePerRefill: 50,
 	refills: 1,
 	subscription: true,
 	coupon: false
@@ -17,7 +17,7 @@ const sarah = {
 
 const rocky = {
 	prescription: "phenylephrine",
-	price: 30,
+	pricePerRefill: 30,
 	refills: 5,
 	subscription: true,
 	coupon: true
