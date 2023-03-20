@@ -1,112 +1,55 @@
-const root = document.getElementById('root');
-const todoInput = document.getElementById('todo');
-const addTodoButton = document.getElementById('addTodo');
-const deleteButton = document.querySelector('.delete');
-const checkbox = document.querySelector('.checkbox');
+// Get the recipe list container element
+const recipeList = document.querySelector('.recipe-list');
+const recipeForm = document.querySelector('#recipe-form');
 
-const BASE_URL = 'https://crudcrud.com/api/6d2bb40709254d77b876906f9cb654cd';
-
-const todos = [];
-
-const fetchTodos = () => {
-    fetch(`${BASE_URL}/todos`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            todos.push(...data);
-            renderTodos();
+// Make a GET request to the RESTful API endpoint
+fetch('http://localhost:8080/api/demo/recipes')
+    .then(response => response.json())
+    .then(data => {
+        // Loop through the recipe items and create the HTML for each item
+        data.forEach(recipe => {
+            const recipeItem = `
+        <div class="recipe-item">
+          <img class="recipe-image" src="${recipe.image_url}">
+          <div class="recipe-title">${recipe.title}</div>
+          <div class="recipe-description">${recipe.description}</div>
+          <a href="#" class="recipe-link">View Recipe</a>
+        </div>
+      `;
+            // Add the recipe item to the recipe list container
+            recipeList.innerHTML += recipeItem;
         });
-};
-
-fetchTodos();
-
-const renderTodos = () => {
-    root.innerHTML = '';
-    todos.forEach(todo => {
-        const todoElement = document.createElement('div');
-        todoElement.classList.add('todo');
-        todoElement.innerHTML = `<li key=${todo._id}>
-            <input type="checkbox" class="checkbox" ${todo.done} />
-            <span>${todo.todo}</span>
-            <button class="delete">Delete</button>
-        </li>
-        `;
-        root.appendChild(todoElement);
+    })
+    .catch(error => {
+        console.error('Error fetching recipes:', error);
     });
-};
 
-const addTodo = () => {
-    fetch(`${BASE_URL}/todos`, {
-        headers: { "Content-Type": "application/json; charset=utf-8" },
+recipeForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const titleInput = document.getElementById('title');
+    const titleValue = titleInput.value.trim(); // Trim leading and trailing whitespace
+
+    if (!titleValue) {
+        console.log('Title field cannot be empty');
+        return;
+    }
+
+    const formData = new FormData(recipeForm);
+
+    fetch('http://localhost:8080/api/demo/recipes', {
         method: 'POST',
-        body: JSON.stringify({
-            todo: todoInput.value,
-            done: false
+        body: formData
+    })
+        .then(response => {
+            if (response.ok) {
+                console.log('Recipe added successfully');
+                recipeForm.reset();
+            } else {
+                console.log('Error adding recipe');
+            }
         })
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            todos.push(data);
-            renderTodos();
+        .catch(error => {
+            console.error('Error submitting form:', error);
         });
-};
-
-addTodoButton.addEventListener('click', addTodo);
-
-root.addEventListener('click', (e) => {
-    if (e.target.classList.contains('delete')) {
-        const id = e.target.parentElement.getAttribute('key');
-        deleteTodo(id);
-    }
-});
-
-const deleteTodo = (id) => {
-    fetch(`${BASE_URL}/todos/${id}`, {
-        method: 'DELETE'
-    })
-        .then(data => {
-            console.log(data);
-            todos.splice(todos.findIndex(todo => todo._id === id), 1);
-            renderTodos();
-        });
-};
-
-// toggle checkbox true or false
-const toggleCheckbox = async(id) => {
-    const res = await fetch(`${BASE_URL}/todos/${id}`);
-    
-    console.log("original response", res);
-
-    const todo = await res.json();
-
-    console.log("todo done before", todo.done);
-
-    // toggle true if checked and false if not checked
-    todo.done = !todo.done;
-
-    console.log("todo done after", todo.done);
-
-    const response = await fetch(`${BASE_URL}/todos/${id}`, {
-        headers: { "Content-Type": "application/json; charset=utf-8" },
-        method: 'PUT',
-        body: JSON.stringify(todo)
-    });
-
-    console.log("response", response);
-
-    const data = await response.json();
-
-    console.log("data", data);
-
-    todos.splice(todos.findIndex(todo => todo._id === id), 1, data);
-
-    renderTodos();
-};
-
-root.addEventListener('click', (e) => {
-    if (e.target.classList.contains('checkbox')) {
-        const id = e.target.parentElement.getAttribute('key');
-        toggleCheckbox(id);
-    }
 });
