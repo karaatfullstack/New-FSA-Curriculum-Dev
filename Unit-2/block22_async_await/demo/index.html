@@ -1,101 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Recipe Book</title>
-    <style>
-      /* CSS styles */
-      header {
-        background-color: #333;
-        color: white;
-        padding: 10px;
-        text-align: center;
-      }
-      nav {
-        display: inline-block;
-        margin: 10px;
-      }
-      nav a {
-        color: white;
-        text-decoration: none;
-        padding: 10px;
-        border-radius: 5px;
-        background-color: #666;
-      }
-      nav a:hover {
-        background-color: #999;
-      }
-      .recipe-list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 10px;
-      }
-      .recipe-item {
-        width: 30%;
-        margin-bottom: 20px;
-        box-shadow: 2px 2px 5px grey;
-        border-radius: 5px;
-        overflow: hidden;
-      }
-      .recipe-image {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-      .recipe-title {
-        font-size: 20px;
-        font-weight: bold;
-        padding: 10px;
-      }
-      .recipe-description {
-        padding: 10px;
-      }
-      .recipe-link {
-        display: block;
-        padding: 10px;
-        background-color: #666;
-        color: white;
-        text-align: center;
-        border-radius: 5px;
-        margin-top: 10px;
-        margin-bottom: 20px;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-        text-decoration: none;
-      }
-      .recipe-link:hover {
-        background-color: #999;
-      }
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <title>Recipe Guide</title>
   </head>
   <body>
     <header>
-      <h1>Recipe Book</h1>
+      <h1>Recipe Guide</h1>
       <nav>
         <a href="#">Home</a>
         <a href="#">Recipes</a>
         <a href="#">About</a>
       </nav>
     </header>
-    <main>
-      <form id="recipe-form">
-        <label for="title">Title</label>
-        <input type="text" id="title" name="title" />
-        <label for="image_url">Image URL</label>
-        <input type="text" id="image_url" name="image_url" />
-        <label for="description">Description</label>
-        <textarea id="description" name="description"></textarea>
-        <button type="submit">Add Recipe</button>
-      </form>
 
-      <h2>Recipes</h2>
-      <div class="recipe-list"></div>
-    </main>
-    <footer>
-      <p>Copyright &copy; 2023 Recipe Book</p>
-    </footer>
-
+    <div id="new-recipe-form"></div>
+    <div id="recipes-container"></div>
     <script src="./script.js"></script>
   </body>
 </html>
