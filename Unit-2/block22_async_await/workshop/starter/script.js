@@ -30,15 +30,7 @@ const getPartyById = async (id) => {
 
 // delete party
 const deleteParty = async (id) => {
-    try {
-        const response = await fetch(`${PARTIES_API_URL}/${id}`, {
-            method: 'DELETE',
-        });
-        const deletedParty = await response.json();
-        return deletedParty;
-    } catch (error) {
-        console.error(error);
-    }
+    // your code here
 };
 
 // render a single party by id
@@ -64,11 +56,11 @@ const renderSinglePartyById = async (id) => {
         const partyDetailsElement = document.createElement('div');
         partyDetailsElement.classList.add('party-details');
         partyDetailsElement.innerHTML = `
-            <h2>${party.name}</h2>
-            <p>${party.description}</p>
-            <p>${party.date}</p>
-            <p>${party.time}</p>
-            <p>${party.location}</p>
+            <h2>${party.title}</h2>
+            <p>${party.event}</p>
+            <p>${party.city}</p>
+            <p>${party.state}</p>
+            <p>${party.country}</p>
             <h3>Guests:</h3>
             <ul>
             ${guests.map((guest, index) => `
@@ -120,25 +112,15 @@ const renderParties = async (parties) => {
             // see details
             const detailsButton = partyElement.querySelector('.details-button');
             detailsButton.addEventListener('click', async (event) => {
-                try {
-                    const id = event.target.dataset.id;
-                    renderSinglePartyById(id);
-                } catch (error) {
-                    console.error(error);
-                }
+                // your code here
+
             });
 
             // delete party
             const deleteButton = partyElement.querySelector('.delete-button');
             deleteButton.addEventListener('click', async (event) => {
-                try {
-                    const id = event.target.dataset.id;
-                    await deleteParty(id);
-                    const parties = await getAllParties();
-                    renderParties(parties);
-                } catch (error) {
-                    console.error(error);
-                }
+                // your code here
+
             });
         });
     } catch (error) {
@@ -149,9 +131,8 @@ const renderParties = async (parties) => {
 
 // init function
 const init = async () => {
-    const parties = await getAllParties();
-    console.log(parties);
-    renderParties(parties);
+    // your code here
+
 };
 
 init();
