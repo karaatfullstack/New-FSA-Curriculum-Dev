@@ -1,0 +1,118 @@
+<!-- Creation of a website that takes orders from a customer to provide the best pet grooming services -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Grooming Website</title>
+    <link rel="stylesheet" href="style2.css">  <!--Linking the relevant css file for styling purpose -->
+    <link href="/favicon.ico" type="image/x-icon" rel="icon" />
+   
+</head>
+<h1 id="top-line" class="h1">The Paw Kingdom</h1> <!--Name of the website -->
+<body>
+     <!--Providing static background as image-->
+    <style>
+        body {
+            background-image: url('images/pet.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            background-size: 105% 105%;
+          }
+    </style>
+
+    <h3>
+        Dear Pet Parent !! <br>
+        Please choose the package your pet requires<br><br>
+    </h3>
+
+        <!--Providing the services list-->
+        <div class="Package_1">
+        <h2>Package 1</h2>
+        </div>
+        <div class=service_list>
+            <br>
+                Bath 
+            <br><br>
+                Deshedding 
+            <br><br>
+                Blow Drying
+            <br><br>
+                Tick & Flea Treatment 
+            <br><br>
+        </div>
+        
+
+        <div class="Package_2">
+            <h2>Package 2</h2>
+        </div>
+        <div class=service_list_2>
+            <br>
+            Shampoo & Conditioning
+            <br><br>
+            Full Body Trimming 
+            <br><br>
+            Nail Clipping 
+            <br><br>
+            Tick & Flea Treatment 
+            <br><br>
+        </div>
+
+        <div class="Package_3">
+            <h2>Package 3</h2>
+        </div>
+        <div class=service_list_3>
+            <br>
+            Shampoo & Conditioning
+            <br><br>
+            Full Body Trimming 
+            <br><br>
+            Sanitary Clipping 
+            <br><br>
+            Dematting
+            <br><br>
+        </div>
+
+        <div class="Package_Price">
+        <label>
+            <input type="checkbox" id="Package_Price" name="Package_Price" value = 30 onclick=Checkbox_Click()>
+            Package Price : $30
+        </label>
+        </div>
+
+        <div class="Package_Price_2">
+        <label>
+                <input type="checkbox" id="Package_Price" name="Package_Price" value = 40 onclick=Checkbox_Click()>
+                Package Price : $40
+        </label>
+        </div>
+
+        <div class="Package_Price_3">
+            <label>
+                    <input type="checkbox" id="Package_Price" name="Package_Price" value = 45 onclick=Checkbox_Click()>
+                    Package Price : $45
+            </label>
+        </div>
+
+    <!-- Creating the discount button -->
+    <div class="discount">
+        <label>
+            <input type="checkbox" id="discountedTotal" name="discountedTotal" value = 0 onclick=Checkbox_Click()>
+            Apply Discount
+        </label>
+    </div>
+
+     <!-- Creating the Back button -->
+    <button onclick="location.href='index.html'">Back</button>
+
+      <!-- Creating the Pay button -->
+    <div class="Payment" >
+        <button id="Payment1" onclick=Payment()>Pay Now</button>
+    </div>
+    <p id="output">
+        <script src="calculator.js"></script>
+    </p>
+    <!-- <script src="Payment.js"></script> -->
+    </div>
