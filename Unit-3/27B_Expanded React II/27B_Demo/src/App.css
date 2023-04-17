@@ -1,0 +1,51 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color:aliceblue;
+}
+
+li {
+  font-size: 25px;
+  font-weight: bold;
+  color:blue;
+  margin-top: 20px;
+  margin-left: 200px;
+}
+.label {
+  color:darkgreen;
+  font-weight: bold;
+}
+
+/* Style for the movie title */
+h1 {
+  text-align: center;
+  font-size: 42px;
+  color:hotpink;
+  margin-bottom: 10px;
+}
+/* Style for the container div */
+div {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color:black;
+}
+img {
+  float: right;
+  border: 10px solid #0788ac;
+  margin-left: 10px;
+  margin-right: 300px;
+} */
+
+
+
+.App{
+  text-align: center;
+  background-color:aliceblue;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
