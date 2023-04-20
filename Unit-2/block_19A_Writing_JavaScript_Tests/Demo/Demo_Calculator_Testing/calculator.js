@@ -1,4 +1,4 @@
-// Bulding an object calculation which hold function like sum, diff and produt
+//  Bulding an object anmed calculation which hold function like sum, diff, divide, and produt
 
 const calculations = {
     sum: function(a,b) {
