@@ -16,10 +16,10 @@ const num2 = new Complex(8, -2);
 
 // Define the function OperationFunc that returns a function based on the given operation
 function operationFunc(operation) {
-  return function(num1, num2) {
+  return function (num1, num2) {
     const result = operation(num1, num2);
     return result;
-  }
+  };
 }
 
 // Define the addition function
