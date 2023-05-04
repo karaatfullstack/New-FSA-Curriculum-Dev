@@ -1,4 +1,4 @@
-//Higher-order function:
+//Convert all string to lowercase:
 
 function higherOrderFunc(arr, modifyFunc) {
   const modifiedArray = [];
@@ -14,3 +14,24 @@ const modifiedArray = higherOrderFunc(
   }
 );
 console.log(modifiedArray);
+
+//String length More than 11
+
+function filterStringChar(stringGiven, condition) {
+  return stringGiven.filter(condition);
+}
+
+function hasMoreThanElevenChars(string) {
+  return string.length > 11;
+}
+
+const stringArray = ["Hippopotamus", "King Cobra", "Giant Panda", "Crocodile"];
+
+const filteredStringArray = filterStringChar(
+  stringArray,
+  hasMoreThanElevenChars
+);
+
+console.log(filteredStringArray);
+
+
