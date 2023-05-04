@@ -35,3 +35,20 @@ const filteredStringArray = filterStringChar(
 console.log(filteredStringArray);
 
 
+//Reverse String
+
+function modifyGivenStrings(stringArray, callbackFunction) {
+  return stringArray.map(callbackFunction);
+}
+
+function reverseString(string) {
+  return string.split("").reverse().join("");
+}
+
+const stringArray = ["Hippopotamus", "King Cobra", "Giant Panda", "Crocodile"];
+
+const modifiedTheStrings = modifyGivenStrings(stringArray, reverseString);
+
+console.log(modifiedTheStrings);
+
+
