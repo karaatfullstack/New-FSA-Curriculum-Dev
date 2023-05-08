@@ -51,4 +51,42 @@ const modifiedTheStrings = modifyGivenStrings(stringArray, reverseString);
 
 console.log(modifiedTheStrings);
 
+//Runner 
+
+const createRunner = (speed) => (name) => {
+  return {
+    name,
+    speed,
+    location: 0,
+    move: function () {
+      this.location += speed;
+    },
+  };
+};
+
+const createFastRunner = createRunner(7);
+const createSlowRunner = createRunner(3);
+
+const foo = createFastRunner("FOO");
+const bar = createSlowRunner("BAR");
+
+function race(runner1, runner2, raceDistance) {
+  runner1.location = 0;
+  runner2.location = 0;
+
+  while (runner1.location < raceDistance && runner2.location < raceDistance) {
+    runner1.move();
+    runner2.move();
+  }
+
+  if (runner1.location >= raceDistance && runner2.location >= raceDistance) {
+    return "It's a tie!";
+  } else if (runner1.location >= raceDistance) {
+    return `${runner1.name} wins!`;
+  } else {
+    return `${runner2.name} wins!`;
+  }
+}
+
+console.log(race(foo, bar, 100));
 
