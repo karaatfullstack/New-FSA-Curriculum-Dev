@@ -17,7 +17,7 @@ describe('BankAccount', () => {
     store = createStore(reducer, { balance: 0 });
   });
 
-  test('renders bank account balance', () => {
+  test('testing bank account balance', () => {
     const { getByText } = render(
       <Provider store={store}>
         <BankAccount />
@@ -26,7 +26,7 @@ describe('BankAccount', () => {
     expect(getByText('Bank Account Balance: 0')).toBeInTheDocument();
   });
 
-  test('handles deposit credit 1', () => {
+  test('testing deposit and credit', () => {
     // const { getByLabelText, getByText, getByRole } = 
     render(
       <Provider store={store}>
@@ -52,7 +52,7 @@ describe('BankAccount', () => {
     
   });
 
-  test('handles deposit credit 2', () => {
+  test('testing deposit and credit 2', () => {
     render(
       <Provider store={store}>
         <BankAccount />
@@ -78,7 +78,7 @@ describe('BankAccount', () => {
   });
 
 
-  test('handles credit', () => {
+  test('testing credit only', () => {
     render(
       <Provider store={store}>
         <BankAccount />
