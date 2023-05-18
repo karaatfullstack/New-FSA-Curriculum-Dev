@@ -3,7 +3,7 @@ const recipesContainer = document.getElementById('recipes-container');
 const newRecipeFormContainer = document.getElementById('new-recipe-form');
 
 // API URL
-const API_URL = 'http://localhost:8080/api/demo/recipes';
+const API_URL = 'https://fsa-async-await.herokuapp.com/api/demo/recipes';
 
 // fetch recipes
 const fetchAllRecipes = async () => {

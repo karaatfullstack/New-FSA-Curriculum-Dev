@@ -1,9 +1,9 @@
 const songContainer = document.getElementById('song-container');
 const newSongForm = document.getElementById('new-song-form');
 
-const SONGS_API_URL = 'http://localhost:8080/api/guided-practice/songs';
-const ARTISTS_API_URL = 'http://localhost:8080/api/guided-practice/artists';
-const GENRES_API_URL = 'http://localhost:8080/api/guided-practice/genres';
+const SONGS_API_URL = 'https://fsa-async-await.herokuapp.com/api/guided-practice/songs';
+const ARTISTS_API_URL = 'https://fsa-async-await.herokuapp.com/api/guided-practice/artists';
+const GENRES_API_URL = 'https://fsa-async-await.herokuapp.com/api/guided-practice/genres';
 
 // fetch all songs
 const fetchAllSongs = async () => {
