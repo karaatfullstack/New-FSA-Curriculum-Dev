@@ -16,9 +16,11 @@ To handle a redirect URL in JavaScript on the backend, you can follow these step
 
 8. Ensure that the redirect is working as expected by accessing the relevant endpoint or triggering the redirect through your application. Verify that the user is redirected to the desired URL.
 
-By following these steps, you can handle redirect URLs on the backend using JavaScript, allowing you to control the flow of user navigation and provide a seamless user experience.\
+By following these steps, you can handle redirect URLs on the backend using JavaScript, allowing you to control the flow of user navigation and provide a seamless user experience.
 
 9. Create one .env filein the project directory and store GITHUB*CLIENT_ID and GITHUB_CLIENT_SECRET* KEY.
-   Sample env file:
+Sample env file:
+
+![image](https://github.com/FullstackAcademy/program-guide-web-partnerships/assets/124772462/83af0456-31dc-4987-98f1-01c01c377820)
 
 10. You will get GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET after creating GitHub OAuth application.
