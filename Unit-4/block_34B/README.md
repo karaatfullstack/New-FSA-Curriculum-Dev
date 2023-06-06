@@ -18,7 +18,7 @@ To handle a redirect URL in JavaScript on the backend, you can follow these step
 
 By above steps, you can handle redirect URLs on the backend using JavaScript, allowing you to control the flow of user navigation and provide a seamless user experience.
 
-1. Create one .env file in the project directory and store **GITHUB*CLIENT_ID** and **GITHUB_CLIENT_SECRET** KEY.
+1. Create one .env file in the project directory and store **GITHUB_CLIENT_ID** and **GITHUB_CLIENT_SECRET** KEY.
 Sample **env** file:
 
 ![image](https://github.com/FullstackAcademy/program-guide-web-partnerships/assets/124772462/83af0456-31dc-4987-98f1-01c01c377820)
