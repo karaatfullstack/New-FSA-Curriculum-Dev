@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+To handle a redirect URL in JavaScript on the backend, you can follow these steps:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Identify the URL to which you want to redirect the user. This could be a specific route or an external URL.
 
-## Available Scripts
+2. Create a server-side route that will handle the redirect request. This can be done using a framework like Express.js or any other backend framework.
 
-In the project directory, you can run:
+3. In the backend route handler, use the appropriate method to perform the redirect. In Express.js, you can use the `res.redirect()` method to redirect the user.
 
-### `npm start`
+4. Set the status code: Specify the appropriate HTTP status code for the redirect. The most common status code for redirects is `302 Found`, which indicates a temporary redirect. You can set the status code using the `res.status()` method.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+5. Pass the redirect URL as an argument to the `res.redirect()` method. This can be an absolute URL or a relative path depending on your requirements.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+6. Call the `res.redirect()` method to send the redirect response to the client. This will instruct the client's browser to redirect to the specified URL.
 
-### `npm test`
+7. If needed, you can include additional logic before or after the redirect, such as processing data, validating user input, or setting cookies.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+8. Ensure that the redirect is working as expected by accessing the relevant endpoint or triggering the redirect through your application. Verify that the user is redirected to the desired URL.
 
-### `npm run build`
+By following these steps, you can handle redirect URLs on the backend using JavaScript, allowing you to control the flow of user navigation and provide a seamless user experience.\
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+9. Create one .env filein the project directory and store GITHUB*CLIENT_ID and GITHUB_CLIENT_SECRET* KEY.
+   Sample env file:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+10. You will get GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET after creating GitHub OAuth application.
