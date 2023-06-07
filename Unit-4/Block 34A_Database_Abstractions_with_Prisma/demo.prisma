@@ -1,0 +1,27 @@
+model Student {
+  id Int @id @default(autoincrement())
+  name String @unique
+  email String @unique
+  birthdate DateTime
+  phone_number String
+}
+
+model Course {
+  id Int @id @default(autoincrement())
+  name String @unique
+  description String
+  start_date DateTime
+  end_date DateTime
+}
+
+model Enrollment {
+  student_id Int
+  course_id Int
+  start_date DateTime
+  end_date DateTime
+
+  @@unique([student_id, course_id])
+
+  student Student @relation(fields: [student_id], references: [id])
+  course Course @relation(fields: [course_id], references: [id])
+}
