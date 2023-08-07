@@ -1,5 +1,7 @@
 # Demo Code
 
-Just some simple examples of passing props between components. (one file)
+Just some simple examples of passing props between components
 
-Get Creative with examples however you need!
+1. Run `npm install`
+2. Run `npm run build`
+3. Run `npm run preview` to start the Vite app

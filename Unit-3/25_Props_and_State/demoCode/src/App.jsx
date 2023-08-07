@@ -1,24 +1,24 @@
-import { useState } from "react";
 import "./App.css";
-import Profile from "./Profile";
+import Pizza from "./Pizza.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
-
+  const toppings = ['pepperoni', 'olives', 'honey', 'pineapple'];
+  console.log(toppings);
   return (
     <div className="card">
-      <Button count={count} setCount={setCount} />
-      <Profile />
+      {/* <Button number={count} setNumber={setCount} /> */}
+      <Pizza type={toppings} size="medium"/>
     </div>
   );
 }
 
-function Button({ count, setCount }) {
-  return (
-    <button onClick={() => setCount((count) => count + 1)}>
-      count is {count}
-    </button>
-  );
-}
+// function Button({ number, setNumber }) {
+//   return (
+//     <button onClick={() => setNumber((number) => number + 1)}>
+//       count is {number}
+//     </button>
+//   );
+// }
 
 export default App;
